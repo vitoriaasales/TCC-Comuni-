@@ -1,0 +1,108 @@
+ion-content {
+  --background: rgb(255, 243, 226);
+}
+
+.container {
+  padding: 50px 30px;
+  position: relative;
+  background-color: rgb(255, 243, 226);
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #252525;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  color: #7a7a7a;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.dados {
+  margin-bottom: 20px;
+}
+
+.dados label {
+  display: block;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+ion-input {
+  --background: #d8d8d8;
+  --border-radius: 6px;
+  --padding-start: 12px;
+  min-height: 50px;
+}
+
+ion-button {
+  margin-top: 25px;
+  --background: #2f2f2f;
+  --border-radius: 8px;
+  height: 48px;
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: #555;
+  margin-top: 18px;
+  text-decoration: underline;
+}
+
+
+/* =========================
+   LOGO COMUNI+
+========================= */
+
+.logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo-icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 2px;
+}
+
+.icone-ouvido {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #eeeeea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: #252525;
+  z-index: 2;
+}
+
+.icone-fala {
+  background: #252525;
+  color: white;
+  border-radius: 12px;
+  font-size: 11px;
+  padding: 5px 7px;
+  margin-left: -4px;
+}
+
+.logo h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252525;
+  margin: 0;
+}
+
+.logo h2 span {
+  color: #d8b987;
+}

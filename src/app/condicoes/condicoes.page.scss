@@ -1,0 +1,259 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.pagina {
+  --background: rgb(255, 243, 226);
+  background: rgb(255, 243, 226);
+}
+
+ion-content {
+  --background: rgb(255, 243, 226);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  position: relative;
+
+  width: 100%;
+  max-width: 390px;
+
+  min-height: 100%;
+
+  margin: 0 auto;
+
+  padding: 20px 45px 40px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.voltar {
+  position: absolute;
+
+  top: 77px;
+  left: 36px;
+
+  width: 35px;
+  height: 35px;
+
+  margin: 0;
+  padding: 0;
+
+  --background: transparent;
+  --color: #252525;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* CÍRCULO DA SETA */
+
+.seta-voltar {
+  width: 28px;
+  height: 28px;
+
+  border: 3px solid #252525;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  color: #252525;
+
+  font-size: 23px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  padding-bottom: 3px;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  text-align: center;
+
+  margin-top: 47px;
+
+  margin-bottom: 31px;
+}
+
+.logo-icones {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
+
+  margin-bottom: 2px;
+}
+
+.icone-ouvido {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #eeeeea;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+
+  color: #252525;
+
+  z-index: 2;
+}
+
+.icone-fala {
+  background: #252525;
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 11px;
+
+  padding: 5px 7px;
+
+  margin-left: -4px;
+}
+
+.logo h2 {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #252525;
+
+  margin: 0;
+}
+
+.logo h2 span {
+  color: #d8b987;
+}
+
+
+/* =========================
+   LIBRAS
+========================= */
+
+.libras {
+  position: absolute;
+
+  right: 9px;
+
+  top: 187px;
+
+  width: 39px;
+  height: 39px;
+
+  background: #0068a9;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 24px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  color: #252525;
+
+  margin: 0 0 38px 0;
+
+  text-align: left;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.texto {
+  color: #252525;
+
+  font-size: 13px;
+
+  line-height: 1.38;
+
+  font-weight: 400;
+
+  text-align: left;
+}
+
+.texto p {
+  margin: 0 0 2px 0;
+
+  color: #252525;
+
+  font-size: 13px;
+
+  line-height: 1.38;
+
+  text-align: left;
+}
+
+.texto em {
+  font-style: italic;
+}
+
+.texto ul {
+  margin-top: 0;
+
+  padding-left: 20px;
+}
+
+.texto li {
+  padding-left: 2px;
+
+  margin-bottom: 3px;
+
+  line-height: 1.4;
+}

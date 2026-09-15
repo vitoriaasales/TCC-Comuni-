@@ -1,0 +1,198 @@
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <!-- PERFIL -->
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+      <!-- INÍCIO -->
+      <ion-item button routerLink="/inicio">
+        <ion-label>Início</ion-label>
+        <ion-icon
+          slot="end"
+          name="home-outline">
+        </ion-icon>
+      </ion-item>
+
+      <!-- CHECKLIST -->
+      <ion-item button routerLink="/seguranca">
+        <ion-label>Checklist de segurança</ion-label>
+      </ion-item>
+
+      <!-- SINAIS DE ALERTA -->
+      <ion-item button routerLink="/alerta">
+        <ion-label>Sinais de Alerta</ion-label>
+      </ion-item>
+
+      <!-- O QUE FAZER -->
+      <ion-item button routerLink="/risco">
+        <ion-label>O que fazer?</ion-label>
+      </ion-item>
+
+      <!-- OCORRÊNCIAS -->
+      <ion-item button routerLink="/ocorrencias">
+        <ion-label>Ocorrências</ion-label>
+      </ion-item>
+
+      <!-- RELATÓRIOS -->
+      <ion-item button routerLink="/relatorios">
+        <ion-label>Relatórios</ion-label>
+      </ion-item>
+
+      <!-- CHAT -->
+      <ion-item button routerLink="/chat">
+        <ion-label>Chat</ion-label>
+      </ion-item>
+
+      <!-- NOTIFICAÇÕES -->
+      <ion-item>
+        <ion-label>Notificações</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+
+      <!-- SAIR -->
+      <ion-item button routerLink="/home">
+        <ion-label>Sair</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- =========================
+     SUA PÁGINA
+========================= -->
+
+<ion-content
+  [fullscreen]="true"
+  class="pagina"
+  id="main-content">
+
+  <!-- BANNER -->
+
+  <div class="banner">
+
+    <!-- BOTÃO DO MENU -->
+    <ion-menu-button
+      menu="menu-principal"
+      class="menu-button">
+    </ion-menu-button>
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVm42xHwS5FNSs6-BF7Lw7j8MWWnRmaX-N7vy_C9F7U7TPSMWTf0tlMIgT&s=10"
+      alt="Funcionário trabalhando em uma máquina"
+      class="banner-img"
+    >
+
+    <!-- BOTÃO VOLTAR -->
+
+    <ion-button
+      class="btn-voltar"
+      size="small"
+      fill="solid"
+      routerLink="/inicio">
+
+      Voltar
+
+    </ion-button>
+
+
+    <!-- BOTÃO LIBRAS -->
+
+    <button class="libras-btn">
+
+      <img src="assets/libras.png">
+
+    </button>
+
+  </div>
+
+
+  <!-- CONTEÚDO -->
+
+  <div class="conteudo">
+
+    <h1>Ocorrências</h1>
+
+
+    <!-- ACIDENTES -->
+
+    <div class="card-ocorrencia">
+
+      <h2>Acidentes</h2>
+
+      <ul>
+
+        <li>Queda de altura</li>
+
+        <li>Cortes com a cortadeira</li>
+
+        <li>Choque no setor 7</li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- INCIDENTES -->
+
+    <div class="card-ocorrencia">
+
+      <h2>Incidentes</h2>
+
+      <ul>
+
+        <li>
+          Peça da máquina 17 no setor 14 acabou caindo.
+        </li>
+
+      </ul>
+
+      <strong>
+        CUIDADO AO PASSAR<br>
+        NESTE SETOR!!
+      </strong>
+
+    </div>
+
+
+    <!-- EMERGÊNCIAS -->
+
+    <div class="card-ocorrencia">
+
+      <h2>Emergências</h2>
+
+      <ul>
+
+        <li>Vazamento de gás - SETOR 12</li>
+
+        <li>Incêndio - SETOR 1</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</ion-content>

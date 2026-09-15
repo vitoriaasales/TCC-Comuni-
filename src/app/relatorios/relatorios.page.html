@@ -1,0 +1,288 @@
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <!-- PERFIL -->
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+
+      <!-- INÍCIO -->
+      <ion-item
+        button
+        routerLink="/inicio">
+
+        <ion-label>Início</ion-label>
+
+        <ion-icon
+          slot="end"
+          name="home-outline">
+        </ion-icon>
+
+      </ion-item>
+
+
+      <!-- CHECKLIST -->
+      <ion-item
+        button
+        routerLink="/seguranca">
+
+        <ion-label>Checklist de segurança</ion-label>
+
+      </ion-item>
+
+
+      <!-- SINAIS DE ALERTA -->
+      <ion-item
+        button
+        routerLink="/alerta">
+
+        <ion-label>Sinais de Alerta</ion-label>
+
+      </ion-item>
+
+
+      <!-- O QUE FAZER -->
+      <ion-item
+        button
+        routerLink="/risco">
+
+        <ion-label>O que fazer?</ion-label>
+
+      </ion-item>
+
+
+      <!-- OCORRÊNCIAS -->
+      <ion-item
+        button
+        routerLink="/ocorrencias">
+
+        <ion-label>Ocorrências</ion-label>
+
+      </ion-item>
+
+
+      <!-- RELATÓRIOS -->
+      <ion-item
+        button
+        routerLink="/relatorios">
+
+        <ion-label>Relatórios</ion-label>
+
+      </ion-item>
+
+
+      <!-- CHAT -->
+      <ion-item
+        button
+        routerLink="/chat">
+
+        <ion-label>Chat</ion-label>
+
+      </ion-item>
+
+
+      <!-- NOTIFICAÇÕES -->
+      <ion-item>
+
+        <ion-label>Notificações</ion-label>
+
+        <ion-toggle slot="end"></ion-toggle>
+
+      </ion-item>
+
+
+      <!-- SAIR -->
+      <ion-item
+        button
+        routerLink="/home">
+
+        <ion-label>Sair</ion-label>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+<ion-content
+  [fullscreen]="true"
+  class="pagina"
+  id="main-content">
+
+
+  <!-- =========================
+       BANNER
+  ========================= -->
+
+  <div class="banner">
+
+    <img
+      class="imagem-banner"
+      src="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2020_06/pia_HOme_govSP.jpg"
+      alt="Funcionário trabalhando">
+
+
+    <!-- BOTÃO VOLTAR -->
+    <ion-button
+      class="btn-voltar"
+      size="small"
+      fill="solid"
+      routerLink="/inicio">
+
+      Voltar
+
+    </ion-button>
+
+
+    <!-- MENU -->
+    <ion-menu-button
+      menu="menu-principal"
+      class="menu-button">
+    </ion-menu-button>
+
+
+    <!-- LIBRAS -->
+    <button class="btn-libras">
+
+      <img
+        src="assets/libras.png"
+        alt="Libras">
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
+  <div class="conteudo">
+
+
+    <!-- TÍTULO -->
+    <div class="titulo-area">
+
+      <h1>Relatórios</h1>
+
+
+      <!-- BOTÃO REGISTRAR -->
+      <ion-button
+        class="btn-registrar"
+        *ngIf="usuarioLogado?.tipo === 'gerente'"
+        routerLink="/registrar">
+
+        Registrar Relatório
+
+      </ion-button>
+
+    </div>
+
+
+    <!-- =========================
+         RELATÓRIO 0012
+    ========================= -->
+
+    <div class="relatorio-card">
+
+      <h2>Relatório nº 0012</h2>
+
+      <ul>
+
+        <li>Data: 26/04/2026</li>
+
+        <li>Local: Setor de Produção</li>
+
+        <li>Tipo: Acidente de trabalho</li>
+
+      </ul>
+
+
+      <h3>Descrição</h3>
+
+      <ul class="descricao">
+
+        <li>
+
+          Colaborador sofreu um corte na mão ao operar
+          máquina devido ao uso incorreto e falta de EPI.
+          Foi atendido, orientado e reforçado o uso de luvas.
+          Como prevenção, serão feitos treinamentos e maior
+          fiscalização do uso de EPIs.
+
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- =========================
+         RELATÓRIO 0013
+    ========================= -->
+
+    <div class="relatorio-card">
+
+      <h2>Relatório nº 0013</h2>
+
+      <ul>
+
+        <li>Data: 29/04/2026</li>
+
+        <li>Local: Setor de Análise</li>
+
+        <li>Tipo: Vazamento</li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- =========================
+         RELATÓRIO 0014
+    ========================= -->
+
+    <div class="relatorio-card">
+
+      <h2>Relatório nº 0014</h2>
+
+      <ul>
+
+        <li>Data: 03/05/2026</li>
+
+        <li>Local: Setor de Produção</li>
+
+        <li>Tipo: Risco elétrico</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</ion-content>

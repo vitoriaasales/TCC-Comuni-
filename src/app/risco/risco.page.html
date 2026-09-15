@@ -1,0 +1,166 @@
+<!-- MENU -->
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+      <ion-item button routerLink="/inicio">
+        <ion-label>Início</ion-label>
+        <ion-icon slot="end" name="home-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item button routerLink="/seguranca">
+        <ion-label>Checklist de segurança</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/alerta">
+        <ion-label>Sinais de Alerta</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/risco">
+        <ion-label>O que fazer?</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/ocorrencias">
+        <ion-label>Ocorrências</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/relatorios">
+        <ion-label>Relatórios</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/chat">
+        <ion-label>Chat</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notificações</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item button routerLink="/home">
+        <ion-label>Sair</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- CONTEÚDO -->
+<ion-content
+  [fullscreen]="true"
+  id="main-content">
+
+  <div class="banner">
+
+    <!-- MENU -->
+    <ion-menu-button
+      menu="menu-principal"
+      class="menu-button">
+    </ion-menu-button>
+
+    <img src="../assets/trabalho.jpg">
+
+    <img src="../assets/logo.png">
+
+    <ion-button
+      class="btn-voltar"
+      size="small"
+      fill="solid"
+      routerLink="/inicio">
+      Voltar
+    </ion-button>
+
+    <img
+      src="../assets/libras.jpg"
+      class="logo-surdo">
+
+  </div>
+
+
+  <!-- CONTEÚDO -->
+
+  <div class="conteudo">
+
+    <h3>Situação de risco</h3>
+
+    <h1>O que fazer ?</h1>
+
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+      <p class="titulo-card">
+        O que é uma situação de risco ?
+      </p>
+
+      <ul>
+        <li>🔥 Incêndio</li>
+        <li>⚡ Choque elétrico</li>
+        <li>🧪 Vazamento químico</li>
+      </ul>
+
+    </div>
+
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+      <p class="titulo-card">
+        Instruções - Em caso de incêndio 🔥
+      </p>
+
+      <ol>
+        <li>Pare imediatamente o que está fazendo</li>
+        <li>Mantenha a calma</li>
+        <li>Não use elevadores</li>
+        <li>Abaixe-se para evitar a fumaça</li>
+        <li>Siga as placas de saída</li>
+        <li>Não volte para pegar objetos</li>
+        <li>Vá para o ponto de encontro seguro</li>
+      </ol>
+
+    </div>
+
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+      <p class="titulo-card">
+        Instruções - Em caso de risco elétrico ⚡
+      </p>
+
+      <ol>
+        <li>Não toque em fios ou equipamentos danificados</li>
+        <li>Afaste-se da área</li>
+        <li>Avise imediatamente o responsável</li>
+        <li>Desligue a energia apenas se for seguro</li>
+        <li>Aguarde orientação da equipe técnica</li>
+      </ol>
+
+    </div>
+
+  </div>
+
+</ion-content>

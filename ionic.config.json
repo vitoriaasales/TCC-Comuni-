@@ -1,0 +1,7 @@
+{
+  "name": "comuni",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

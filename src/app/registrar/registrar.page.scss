@@ -1,0 +1,440 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.pagina {
+  --background: #faf7f1;
+
+  background: #faf7f1;
+
+  position: relative;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+  position: relative;
+
+  width: 100%;
+  height: 228px;
+
+  overflow: hidden;
+
+  border-radius: 0 0 28px 28px;
+
+  background: #ddd;
+}
+
+
+/* IMAGEM */
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-app {
+  position: absolute;
+
+  top: 68px;
+  left: 31px;
+
+  width: 76px;
+  height: auto;
+
+  z-index: 10;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.botao-voltar {
+  position: absolute;
+
+  top: 92px;
+  left: 34px;
+
+  z-index: 15;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #555;
+
+  font-size: 11px;
+
+  padding: 6px 9px;
+
+  border-radius: 4px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-botao {
+  position: absolute;
+
+  top: 42px;
+  right: 13px;
+
+  z-index: 20;
+
+  --color: #222;
+
+  font-size: 27px;
+
+  display: block !important;
+}
+
+
+/* =========================
+   LIBRAS
+========================= */
+
+.botao-libras {
+  position: absolute;
+
+  right: 10px;
+  bottom: 9px;
+
+  width: 41px;
+  height: 41px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  background: #005ca8;
+
+  z-index: 20;
+}
+
+
+.libras-icon {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+  padding: 24px 38px 110px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.conteudo h1 {
+  margin: 0 0 18px 4px;
+
+  font-size: 20px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #292929;
+}
+
+
+/* =========================
+   CAIXA DO RELATÓRIO
+========================= */
+
+.relatorio {
+  width: 100%;
+
+  height: 247px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 6px;
+
+  padding: 8px 9px;
+
+  overflow: hidden;
+}
+
+
+/* TÍTULO DENTRO DO RELATÓRIO */
+
+.relatorio h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+/* =========================
+   CAIXA DE REGISTRO
+========================= */
+
+.chat-box {
+  position: fixed;
+
+  left: 47px;
+  right: 47px;
+  bottom: 19px;
+
+  height: 88px;
+
+  box-sizing: border-box;
+
+  padding: 11px 11px 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #dedede;
+
+  border-radius: 14px;
+
+  z-index: 50;
+}
+
+
+/* INPUT */
+
+.chat-box input {
+  width: 100%;
+
+  height: 30px;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #333;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+
+.chat-box input::placeholder {
+  color: #b9b9b9;
+
+  opacity: 1;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.chat-acoes {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 7px;
+}
+
+
+.chat-acoes button {
+  width: 22px;
+  height: 22px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #222;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   BOTÃO ENVIAR
+========================= */
+
+.botao-enviar {
+  margin-left: auto;
+
+  width: 29px !important;
+  height: 29px !important;
+
+  border-radius: 50% !important;
+
+  background: #e5e5e5 !important;
+
+  border: 1px solid #c8c8c8 !important;
+
+  color: #aaa !important;
+
+  font-size: 17px !important;
+}
+
+
+/* =========================
+   MENU LATERAL
+========================= */
+
+ion-menu {
+  --width: 280px;
+
+  z-index: 10000;
+}
+
+
+.menu-content {
+  --background: #faf7f1;
+
+  background: #faf7f1;
+}
+
+
+.menu-content ion-list {
+  background: transparent;
+
+  padding: 20px 10px;
+}
+
+
+.menu-content ion-item {
+  --background: transparent;
+  --color: #333;
+
+  --padding-start: 16px;
+  --inner-padding-end: 12px;
+
+  min-height: 48px;
+
+  margin-bottom: 5px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+}
+
+
+.menu-content ion-item:active {
+  --background: #e8e3da;
+}
+
+
+.menu-content ion-icon {
+  color: #333;
+
+  font-size: 21px;
+}
+
+
+.perfil-menu {
+  --background: #ffffff !important;
+
+  min-height: 60px !important;
+
+  margin-bottom: 20px !important;
+
+  border-radius: 12px !important;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+}
+
+
+.perfil-container {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 360px) {
+
+  .conteudo {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .chat-box {
+    left: 38px;
+    right: 38px;
+  }
+
+}
+
+
+@media (min-width: 600px) {
+
+  .banner {
+    height: 300px;
+  }
+
+  .conteudo {
+    max-width: 600px;
+
+    margin: auto;
+  }
+
+}

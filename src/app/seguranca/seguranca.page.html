@@ -1,0 +1,286 @@
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <!-- PERFIL -->
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+
+      <!-- INÍCIO -->
+      <ion-item button routerLink="/inicio">
+
+        <ion-label>Início</ion-label>
+
+        <ion-icon
+          slot="end"
+          name="home-outline">
+        </ion-icon>
+
+      </ion-item>
+
+
+      <!-- CHECKLIST -->
+      <ion-item button routerLink="/seguranca">
+
+        <ion-label>
+          Checklist de segurança
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- SINAIS DE ALERTA -->
+      <ion-item button routerLink="/alerta">
+
+        <ion-label>
+          Sinais de Alerta
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- O QUE FAZER -->
+      <ion-item button routerLink="/risco">
+
+        <ion-label>
+          O que fazer?
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- OCORRÊNCIAS -->
+      <ion-item button routerLink="/ocorrencias">
+
+        <ion-label>
+          Ocorrências
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- RELATÓRIOS -->
+      <ion-item button routerLink="/relatorios">
+
+        <ion-label>
+          Relatórios
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- CHAT -->
+      <ion-item button routerLink="/chat">
+
+        <ion-label>
+          Chat
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- NOTIFICAÇÕES -->
+      <ion-item>
+
+        <ion-label>
+          Notificações
+        </ion-label>
+
+        <ion-toggle slot="end"></ion-toggle>
+
+      </ion-item>
+
+
+      <!-- SAIR -->
+      <ion-item button routerLink="/home">
+
+        <ion-label>
+          Sair
+        </ion-label>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+<ion-header [translucent]="true">
+</ion-header>
+
+
+<ion-content
+  [fullscreen]="true"
+  class="custom-background"
+  id="main-content">
+
+
+  <!-- =========================
+       BANNER
+  ========================= -->
+
+  <div class="banner">
+
+    <!-- BOTÃO DO MENU -->
+    <ion-menu-button
+      menu="menu-principal"
+      class="menu-btn">
+    </ion-menu-button>
+
+
+    <!-- IMAGEM DO BANNER -->
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Ot3NysZBi0ZrZh6CvTztwo1yrEGWbkt-NTm85rwa07y5hhKzz0zx6-g&s=10"
+      class="banner-img">
+
+
+    <!-- LIBRAS -->
+    <img
+      src="../assets/libras.jpg"
+      class="libras-icon">
+
+  </div>
+
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
+  <div class="container">
+
+    <h1>Checklist de Segurança</h1>
+
+
+    <!-- CAPACETE -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Capacete
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- LUVAS -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Luvas
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- ÓCULOS -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Óculos
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- COLETE -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Colete
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- PROTETOR FACIAL -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Protetor Facial
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- MÁSCARA -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Máscara
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- BOTAS -->
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;margin:25px 0;">
+
+      <span style="font-size:22px;font-weight:600;">
+        Botas
+      </span>
+
+      <ion-toggle></ion-toggle>
+
+    </div>
+
+
+    <!-- BOTÃO VOLTAR -->
+    <div style="text-align:center;margin-top:40px;">
+
+      <ion-button
+        fill="clear"
+        routerLink="/inicio">
+
+        Voltar
+
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

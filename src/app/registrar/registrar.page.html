@@ -1,0 +1,258 @@
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/inicio">
+
+        <ion-label>Início</ion-label>
+
+        <ion-icon
+          slot="end"
+          name="home-outline">
+        </ion-icon>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/seguranca">
+
+        <ion-label>Checklist de segurança</ion-label>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/alerta">
+
+        <ion-label>Sinais de Alerta</ion-label>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/risco">
+
+        <ion-label>O que fazer?</ion-label>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/ocorrencias">
+
+        <ion-label>Ocorrências</ion-label>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/relatorios">
+
+        <ion-label>Relatórios</ion-label>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/chat">
+
+        <ion-label>Chat</ion-label>
+
+      </ion-item>
+
+
+      <ion-item>
+
+        <ion-label>Notificações</ion-label>
+
+        <ion-toggle slot="end"></ion-toggle>
+
+      </ion-item>
+
+
+      <ion-item
+        button
+        routerLink="/home">
+
+        <ion-label>Sair</ion-label>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+<ion-content
+  [fullscreen]="true"
+  class="pagina"
+  id="main-content">
+
+
+  <!-- =========================
+       BANNER
+  ========================= -->
+
+  <div class="banner">
+
+    <img
+      src="../assets/trabalho3.jpg"
+      class="banner-img"
+      alt="Profissional trabalhando">
+
+
+    <!-- LOGO -->
+    <img
+      src="../assets/logo.png"
+      class="logo-app"
+      alt="Logo">
+
+
+    <!-- BOTÃO VOLTAR -->
+    <button
+      class="botao-voltar"
+      routerLink="/relatorios">
+
+      Voltar
+
+    </button>
+
+
+    <!-- MENU -->
+    <ion-menu-button
+      menu="menu-principal"
+      autoHide="false"
+      class="menu-botao">
+    </ion-menu-button>
+
+
+    <!-- LIBRAS -->
+    <button class="botao-libras">
+
+      <img
+        src="../assets/libras.jpg"
+        class="libras-icon"
+        alt="Libras">
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
+  <div class="conteudo">
+
+
+    <!-- TÍTULO -->
+    <h1>Registrar Relatório</h1>
+
+
+    <!-- ÁREA DO RELATÓRIO -->
+    <div class="relatorio">
+
+      <h2>Relatório n°.....</h2>
+
+    </div>
+
+
+    <!-- CAIXA DE REGISTRAR -->
+    <div class="chat-box">
+
+      <input
+        type="text"
+        placeholder="Registrar Relatório"
+        [(ngModel)]="relatorioTexto">
+
+
+      <!-- AÇÕES -->
+      <div class="chat-acoes">
+
+
+        <!-- IMAGEM -->
+        <button type="button">
+
+          <ion-icon
+            name="image-outline">
+          </ion-icon>
+
+        </button>
+
+
+        <!-- CÓDIGO -->
+        <button type="button">
+
+          <ion-icon
+            name="code-slash-outline">
+          </ion-icon>
+
+        </button>
+
+
+        <!-- MICROFONE -->
+        <button type="button">
+
+          <ion-icon
+            name="mic-outline">
+          </ion-icon>
+
+        </button>
+
+
+        <!-- ENVIAR -->
+        <button
+          type="button"
+          class="botao-enviar"
+          (click)="registrarRelatorio()">
+
+          <ion-icon
+            name="arrow-up-outline">
+          </ion-icon>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

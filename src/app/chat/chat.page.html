@@ -1,0 +1,328 @@
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<ion-menu
+  menuId="menu-principal"
+  contentId="main-content"
+  side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+      <!-- PERFIL -->
+      <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+
+      <!-- INÍCIO -->
+      <ion-item
+        button
+        routerLink="/inicio">
+
+        <ion-label>Início</ion-label>
+
+        <ion-icon
+          slot="end"
+          name="home-outline">
+        </ion-icon>
+
+      </ion-item>
+
+
+      <!-- CHECKLIST -->
+      <ion-item
+        button
+        routerLink="/seguranca">
+
+        <ion-label>
+          Checklist de segurança
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- SINAIS DE ALERTA -->
+      <ion-item
+        button
+        routerLink="/alerta">
+
+        <ion-label>
+          Sinais de Alerta
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- O QUE FAZER -->
+      <ion-item
+        button
+        routerLink="/risco">
+
+        <ion-label>
+          O que fazer?
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- OCORRÊNCIAS -->
+      <ion-item
+        button
+        routerLink="/ocorrencias">
+
+        <ion-label>
+          Ocorrências
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- RELATÓRIOS -->
+      <ion-item
+        button
+        routerLink="/relatorios">
+
+        <ion-label>
+          Relatórios
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- CHAT -->
+      <ion-item
+        button
+        routerLink="/chat">
+
+        <ion-label>
+          Chat
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- NOTIFICAÇÕES -->
+      <ion-item>
+
+        <ion-label>
+          Notificações
+        </ion-label>
+
+        <ion-toggle slot="end"></ion-toggle>
+
+      </ion-item>
+
+
+      <!-- SAIR -->
+      <ion-item
+        button
+        routerLink="/home">
+
+        <ion-label>
+          Sair
+        </ion-label>
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+<ion-content
+  [fullscreen]="true"
+  class="pagina"
+  id="main-content">
+
+
+  <!-- MENU NO CANTO SUPERIOR DIREITO -->
+
+  <ion-menu-button
+    menu="menu-principal"
+    autoHide="false"
+    class="menu-botao">
+  </ion-menu-button>
+
+
+  <!-- =========================
+       BANNER
+  ========================= -->
+
+  <div class="banner">
+
+    <img
+      src="../assets/trabalho3.jpg"
+      class="banner-img"
+      alt="Profissionais trabalhando"
+    >
+
+
+    <!-- LOGO -->
+
+    <img
+      src="../assets/logo.png"
+      class="logo-app"
+      alt="Logo"
+    >
+
+
+    <!-- BOTÃO VOLTAR -->
+
+    <button
+      routerLink="/inicio"
+      class="botao-voltar">
+
+      Voltar
+
+    </button>
+
+
+    <!-- LIBRAS -->
+
+    <button class="botao-libras">
+
+      <img
+        src="../assets/libras.jpg"
+        class="libras-icon"
+        alt="Libras"
+      >
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
+
+  <div class="conteudo">
+
+
+    <!-- MENSAGEM -->
+
+    <div class="mensagem">
+
+      <strong>
+        Olá Usuário!
+      </strong>
+
+      <p>
+        Aqui você pode sanar suas dúvidas com dois tipos de atendimento.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         ATENDIMENTOS
+    ========================= -->
+
+    <div class="atendimentos">
+
+
+      <!-- IA -->
+
+      <div
+        class="tipo-atendimento"
+        routerLink="/ia">
+
+        <div class="icone-atendimento">
+
+          <svg
+            class="ia-logo"
+            viewBox="0 0 100 80"
+            fill="#000">
+
+            <path d="M 10 10 H 30 V 70 H 10 Z"></path>
+
+            <path d="M 35 10 L 80 50 L 80 70 L 35 30 Z"></path>
+
+          </svg>
+
+        </div>
+
+        <p>
+          Inteligência Artificial
+        </p>
+
+      </div>
+
+
+      <!-- PESSOA REAL -->
+
+      <div
+        class="tipo-atendimento"
+        routerLink="/pessoa">
+
+        <div class="icone-atendimento">
+
+          <ion-icon name="person"></ion-icon>
+
+        </div>
+
+        <p>
+          Pessoa real
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHAT
+    ========================= -->
+
+    <div class="chat-box">
+
+      <input
+        type="text"
+        placeholder="What would you like to know?"
+      >
+
+      <div class="chat-acoes">
+
+        <button type="button">
+          <ion-icon name="image-outline"></ion-icon>
+        </button>
+
+        <button type="button">
+          <ion-icon name="code-slash-outline"></ion-icon>
+        </button>
+
+        <button type="button">
+          <ion-icon name="mic-outline"></ion-icon>
+        </button>
+
+        <button
+          type="button"
+          class="botao-enviar">
+
+          <ion-icon name="arrow-up-outline"></ion-icon>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,99 @@
+/* Fundo */
+
+.custom-background{
+  --background: #F8F5F0;
+}
+
+/* Banner */
+
+.banner{
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.banner-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão do menu */
+
+.menu-btn{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: white;
+  font-size: 34px;
+}
+
+/* Ícone Libras */
+
+.libras-icon{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  border-radius: 8px;
+}
+
+/* Conteúdo */
+
+.container{
+  width: 100%;
+  padding: 30px 25px 40px;
+}
+
+.container h1{
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 35px;
+}
+
+/* Itens */
+
+.item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.item span{
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Toggle */
+
+ion-toggle{
+  --background: #d7d7d7;
+  --background-checked: #2F2F2F;
+
+  --handle-background: white;
+  --handle-background-checked: white;
+
+  transform: scale(.95);
+}
+
+/* Botão voltar */
+
+.btn-voltar{
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.btn-voltar ion-button{
+  --color: #555;
+  font-size: 16px;
+  text-transform: none;
+}

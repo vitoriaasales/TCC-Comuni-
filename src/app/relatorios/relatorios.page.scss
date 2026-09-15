@@ -1,0 +1,427 @@
+/* ================================
+   PÁGINA
+================================ */
+
+.pagina {
+  --background: #f7f3ec;
+  background: #f7f3ec;
+  color: #222;
+}
+
+
+/* ================================
+   BANNER
+================================ */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 235px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.imagem-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Deixa a parte inferior do banner
+   um pouco mais suave */
+
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35px;
+  background: linear-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.35)
+  );
+  pointer-events: none;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+  position: absolute;
+  top: 38px;
+  left: 25px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #222;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.logo-icon {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-icon ion-icon {
+  font-size: 17px;
+}
+
+
+/* ================================
+   BOTÃO VOLTAR
+================================ */
+
+.btn-voltar {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  --background: white;
+  --color: #333;
+  --border-radius: 8px;
+  text-transform: none;
+  z-index: 10;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+.menu-button {
+  display: block !important;
+  position: absolute !important;
+
+  top: 42px !important;
+  right: 22px !important;
+
+  z-index: 9999 !important;
+
+  width: 38px !important;
+  height: 38px !important;
+
+  margin: 0 !important;
+
+  --color: #222;
+  --background: rgba(255, 255, 255, 0.15);
+  --border-radius: 8px;
+
+  font-size: 30px;
+}
+
+
+/* ================================
+   BOTÃO LIBRAS
+================================ */
+
+.btn-libras {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  z-index: 10;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: #0069b4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn-libras ion-icon {
+  font-size: 27px;
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.conteudo {
+  padding: 20px 15px 35px;
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+.titulo-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.titulo-area h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: #252525;
+}
+
+
+/* ================================
+   BOTÃO REGISTRAR
+================================ */
+
+.btn-registrar {
+  border: none;
+  border-radius: 0;
+  padding: 6px 9px;
+  background: #dedede;
+  color: #292929;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+
+/* ================================
+   CARD DOS RELATÓRIOS
+================================ */
+
+.relatorio-card {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 9px 10px 12px;
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+
+/* TÍTULO DO CARD */
+
+.relatorio-card h2 {
+  margin: 0 0 4px;
+  color: #303030;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+/* LISTA */
+
+.relatorio-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.relatorio-card li {
+  margin-bottom: 1px;
+}
+
+
+/* ================================
+   DESCRIÇÃO
+================================ */
+
+.relatorio-card h3 {
+  margin: 24px 0 4px;
+  color: #303030;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.relatorio-card .descricao {
+  padding-left: 18px;
+}
+
+.relatorio-card .descricao li {
+  line-height: 1.38;
+}
+
+
+/* ==================================================
+   MENU LATERAL
+================================================== */
+
+ion-menu {
+  --width: 260px;
+}
+
+
+/* FUNDO ESCURO */
+
+ion-menu::part(backdrop) {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+
+/* CAIXA DO MENU */
+
+ion-menu::part(container) {
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.10);
+}
+
+
+/* FUNDO DO MENU */
+
+.menu-content {
+  --background: #ffffff;
+  background: #ffffff;
+}
+
+.menu-content ion-list {
+  background: #ffffff;
+  padding: 70px 0 0 0;
+  margin: 0;
+}
+
+
+/* ================================
+   ITENS DO MENU
+================================ */
+
+.menu-content ion-item {
+  --background: #ffffff;
+  --background-hover: #f5f5f5;
+  --background-activated: #f5f5f5;
+  --color: #292929;
+
+  --padding-start: 48px;
+  --padding-end: 15px;
+
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+
+  --min-height: 44px;
+
+  height: 44px;
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* TEXTO */
+
+.menu-content ion-label {
+  color: #292929;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+/* ================================
+   PERFIL
+================================ */
+
+.perfil-menu {
+  --min-height: 44px;
+  height: 44px;
+}
+
+.perfil-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.perfil-container span {
+  color: #292929;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ================================
+   ÍCONES
+================================ */
+
+.menu-content ion-icon {
+  color: #777777;
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+
+/* ================================
+   ESPAÇAMENTO
+================================ */
+
+.menu-content ion-item + ion-item {
+  margin-top: 3px;
+}
+
+
+/* ================================
+   NOTIFICAÇÕES
+================================ */
+
+.menu-content ion-toggle {
+  --background: #dddddd;
+  --background-checked: #dddddd;
+
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+
+  --handle-width: 18px;
+  --handle-height: 18px;
+
+  --handle-box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.15);
+
+  width: 30px;
+  height: 18px;
+  margin-right: 17px;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (min-width: 600px) {
+
+  .banner {
+    height: 300px;
+  }
+
+  .conteudo {
+    max-width: 650px;
+    margin: auto;
+    padding: 25px 20px 40px;
+  }
+
+  .titulo-area h1 {
+    font-size: 25px;
+  }
+
+  .relatorio-card {
+    padding: 14px;
+  }
+
+  .relatorio-card h2 {
+    font-size: 20px;
+  }
+
+  .relatorio-card ul {
+    font-size: 14px;
+  }
+
+}

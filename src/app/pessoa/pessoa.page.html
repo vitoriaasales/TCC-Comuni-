@@ -1,0 +1,53 @@
+<div id="main-content">
+  <ion-content [fullscreen]="true" class="pagina">
+    
+    <div class="banner">
+      <img src="../assets/trabalho3.jpg" class="banner-img" alt="Profissionais trabalhando">
+      <img src="../assets/logo.png" class="logo-app" alt="Logo">
+
+
+      <button routerLink="/chat" class="botao-voltar">Voltar</button>
+
+      <button class="botao-libras">
+        <img src="../assets/libras.jpg" class="libras-icon" alt="Libras">
+      </button>
+    </div>
+
+    <!-- Conteúdo do Chat -->
+    <div class="conteudo">
+      
+      <!-- Balão de Mensagem -->
+      <div class="mensagem">
+        <strong>Olá!</strong>
+        <p>Estamos procurando alguém para entrar em contato com você.</p>
+        <p>Espere um instante.</p>
+      </div>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <!-- Caixa de Entrada do Chat -->
+      <div class="chat-box">
+        <input type="text" placeholder="What would you like to know?">
+        
+        <div class="chat-acoes">
+          <button type="button">
+            <ion-icon name="image-outline"></ion-icon>
+          </button>
+
+          <button type="button">
+            <ion-icon name="code-slash-outline"></ion-icon>
+          </button>
+
+          <button type="button">
+            <ion-icon name="mic-outline"></ion-icon>
+          </button>
+
+          <button type="button" class="botao-enviar">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+</div>

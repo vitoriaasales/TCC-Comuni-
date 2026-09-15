@@ -1,0 +1,128 @@
+<ion-header [translucent]="true"></ion-header>
+
+<!-- MENU -->
+<ion-menu contentId="main-content" side="start">
+
+  <ion-content class="menu-content">
+
+    <ion-list lines="none">
+
+       <ion-item
+        button
+        routerLink="/sobremim"
+        class="perfil-menu">
+
+        <div class="perfil-container">
+          <span>Seu perfil</span>
+        </div>
+
+      </ion-item>
+
+      <ion-item button routerLink="/inicio">
+        <ion-label>Início</ion-label>
+        <ion-icon slot="end" name="home-outline"></ion-icon>
+      </ion-item>
+      
+
+      <ion-item button routerLink="/seguranca">
+        <ion-label>Checklist de segurança</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/alerta">
+        <ion-label>Sinais de Alerta</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/risco">
+        <ion-label>O que fazer?</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/ocorrencias">
+        <ion-label>Ocorrências</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/relatorios">
+        <ion-label>Relatórios</ion-label>
+      </ion-item>
+
+      <ion-item button routerLink="/chat">
+        <ion-label>Chat</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notificações</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+
+      <ion-item button routerLink="/home">
+        <ion-label>Sair</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<ion-content
+id="main-content"
+[fullscreen]="true"
+class="custom-background">
+
+  <div class="banner">
+
+    <img src="../assets/trabalho3.jpg" class="banner-img">
+
+    <img src="../assets/logo.png" class="logo-app">
+
+    <ion-menu-button class="menu-btn"></ion-menu-button>
+
+    <img src="../assets/libras.jpg" class="libras-icon">
+
+  </div>
+
+  <div class="cards">
+
+    <ion-card class="custom-card">
+
+      <ion-card-header>
+        <ion-card-title>O que fazer?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <p>O que fazer ao saber que você está em risco.</p>
+
+        <div class="btn-wrapper">
+          <ion-button class="btn-entrar" routerLink="/risco">
+            Entrar
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-card class="custom-card">
+
+      <ion-card-header>
+        <ion-card-title>Sinais de Alerta</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <p>Como saber se uma situação é perigosa ou não.</p>
+
+        <div class="btn-wrapper">
+          <ion-button class="btn-entrar" routerLink="/alerta">
+            Entrar
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,100 @@
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+      <div class="logo-icones">
+        <span class="icone-ouvido">◉</span>
+        <span class="icone-fala">•••</span>
+      </div>
+
+      <h2>Comuni<span>+</span></h2>
+
+    </div>
+
+
+    <h1>Login</h1>
+
+    <p>Para acessar sua conta, faça o login</p>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="entrar()">
+
+      <div class="dados">
+
+        <label>Email</label>
+
+        <ion-input
+          placeholder="example1@gmail.com"
+          fill="solid"
+          formControlName="email">
+        </ion-input>
+
+        <!-- VERIFICAÇÃO DO EMAIL -->
+        <div
+          class="mensagem-erro"
+          *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">
+            E-mail é obrigatório.
+          </span>
+
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">
+            Digite um e-mail válido.
+          </span>
+
+        </div>
+
+
+        <br><br>
+
+
+        <label>Senha</label>
+
+        <ion-input
+          type="password"
+          placeholder="password123"
+          fill="solid"
+          formControlName="senha">
+        </ion-input>
+
+        <!-- VERIFICAÇÃO DA SENHA -->
+        <div
+          class="mensagem-erro"
+          *ngIf="loginForm.get('senha')?.touched && loginForm.get('senha')?.invalid">
+
+          <span *ngIf="loginForm.get('senha')?.errors?.['required']">
+            Senha é obrigatória.
+          </span>
+
+        </div>
+
+        <br>
+
+      </div>
+
+
+      <ion-button
+        expand="block"
+        type="submit">
+
+        Entrar
+
+      </ion-button>
+
+    </form>
+
+
+    <a href="/cadastro">Não tenho conta</a>
+    <br>
+
+    <a href="/redefinir">Esqueci minha senha</a>
+
+
+  </div>
+
+</ion-content>
+
