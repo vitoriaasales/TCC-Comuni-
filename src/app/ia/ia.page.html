@@ -1,52 +1,114 @@
+
 <div id="main-content">
   <ion-content [fullscreen]="true" class="pagina">
-    
+
+    <!-- BANNER -->
     <div class="banner">
-      <img src="../assets/trabalho3.jpg" class="banner-img" alt="Profissionais trabalhando">
-      <img src="../assets/logo.png" class="logo-app" alt="Logo">
 
+      <img
+        src="../assets/trabalho3.jpg"
+        class="banner-img"
+        alt="Profissionais trabalhando">
 
-      <button routerLink="/chat" class="botao-voltar">Voltar</button>
+      <img
+        src="../assets/logo.png"
+        class="logo-app"
+        alt="Logo">
+
+      <button routerLink="/chat" class="botao-voltar">
+        Voltar
+      </button>
 
       <button class="botao-libras">
-        <img src="../assets/libras.jpg" class="libras-icon" alt="Libras">
+        <img
+          src="../assets/libras.jpg"
+          class="libras-icon"
+          alt="Libras">
       </button>
+
     </div>
 
-    <!-- Conteúdo do Chat -->
+    <!-- CONTEÚDO DO CHAT -->
     <div class="conteudo">
-      
-      <!-- Balão de Mensagem -->
+
+      <!-- MENSAGEM INICIAL -->
       <div class="mensagem">
         <strong>Olá!</strong>
-        <p>O que você deseja me perguntar ?</p>
+        <p>O que você deseja me perguntar?</p>
       </div>
 
-      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!-- CONVERSA -->
+      <div
+        class="area-conversa"
+        aria-live="polite"
+        *ngIf="mensagens.length > 0 || carregando || erro">
 
-      <!-- Caixa de Entrada do Chat -->
+        <div
+          *ngFor="let mensagem of mensagens"
+          class="balao-mensagem"
+          [ngClass]="mensagem.autor">
+
+          <strong>
+            {{ mensagem.autor === 'usuario' ? 'Você' : 'Comuni+ IA' }}
+          </strong>
+
+          <p>{{ mensagem.texto }}</p>
+
+        </div>
+
+        <!-- CARREGAMENTO -->
+        <div *ngIf="carregando" class="balao-mensagem ia">
+          <strong>Comuni+ IA</strong>
+          <p>Estou preparando sua resposta...</p>
+        </div>
+
+        <!-- ERRO -->
+        <p *ngIf="erro" class="mensagem-erro">
+          {{ erro }}
+        </p>
+
+      </div>
+
+      <!-- CAIXA DE ENTRADA -->
       <div class="chat-box">
-        <input type="text" placeholder="What would you like to know?">
-        
+
+        <input
+          type="text"
+          name="mensagem"
+          [(ngModel)]="textoMensagem"
+          placeholder="Digite sua pergunta..."
+          (keyup.enter)="enviarMensagem()"
+          [disabled]="carregando">
+
         <div class="chat-acoes">
-          <button type="button">
+
+          <button type="button" disabled>
             <ion-icon name="image-outline"></ion-icon>
           </button>
 
-          <button type="button">
+          <button type="button" disabled>
             <ion-icon name="code-slash-outline"></ion-icon>
           </button>
 
-          <button type="button">
+          <button type="button" disabled>
             <ion-icon name="mic-outline"></ion-icon>
           </button>
 
-          <button type="button" class="botao-enviar">
+          <button
+            type="button"
+            class="botao-enviar"
+            (click)="enviarMensagem()"
+            [disabled]="carregando || !textoMensagem.trim()">
+
             <ion-icon name="arrow-up-outline"></ion-icon>
+
           </button>
+
         </div>
+
       </div>
 
     </div>
+
   </ion-content>
 </div>

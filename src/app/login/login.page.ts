@@ -32,7 +32,6 @@ export class LoginPage {
         Validators.required
       ]]
     });
-
   }
 
   async entrar() {
@@ -66,7 +65,8 @@ export class LoginPage {
 
       await loading.dismiss();
 
-      this.router.navigateByUrl('/home', {
+      // Depois do login, vai para a página inicial
+      await this.router.navigateByUrl('/inicio', {
         replaceUrl: true
       });
 
