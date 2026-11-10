@@ -1,36 +1,52 @@
-<ion-content [fullscreen]="true"> 
- 
-<div class="container"> 
+```html
+<ion-content [fullscreen]="true">
 
-<!-- LOGO -->
-<div class="logo">
-  <div class="logo-icones">
-    <span class="icone-ouvido">◉</span>
-    <span class="icone-fala">•••</span>
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <div class="logo-icones">
+        <span class="icone-ouvido">◉</span>
+        <span class="icone-fala">•••</span>
+      </div>
+
+      <h2>Comuni<span>+</span></h2>
+
+    </div>
+
+    <h1>Redefinir Senha</h1>
+
+    <div class="dados">
+
+      <label>Email</label>
+      <ion-input
+        type="email"
+        placeholder="example1@gmail.com"
+        fill="solid">
+      </ion-input>
+
+      <label>Nova Senha</label>
+      <ion-input
+        type="password"
+        placeholder="Nova senha"
+        fill="solid">
+      </ion-input>
+
+      <label>Redefinir Senha</label>
+      <ion-input
+        type="password"
+        placeholder="Redefinir senha"
+        fill="solid">
+      </ion-input>
+
+      <ion-button expand="block" href="/login">
+        ENVIAR
+      </ion-button>
+
+    </div>
+
   </div>
-  <h2>Comuni<span>+</span></h2>
-</div>
- 
-<h1>Redefinir Senha</h1> 
- 
- 
-<div class="dados"> 
-<label>Email</label> 
-<ion-input placeholder="example1@gmail.com" fill="solid"></ion-input> 
- 
-<label>Nova Senha</label> 
-<ion-input placeholder="Nova senha" fill="solid"></ion-input> 
- 
-<label>Redefinir Senha</label> 
-<ion-input placeholder="Redefinir senha" fill="solid"></ion-input> 
- 
-<ion-button expand="block" href="/login"> 
-Enviar 
-</ion-button><br> 
- 
- 
-</div> 
- 
-</div>
 
 </ion-content>
+```

@@ -1,24 +1,36 @@
+ion-content {
+  --background: rgb(255, 243, 226);
+}
+
 .container {
 
-  padding: 50px 30px;
+  padding: 40px 25px 50px;
 
   position: relative;
 
   background-color: rgb(255, 243, 226);
 
+  min-height: 100%;
+
+  box-sizing: border-box;
+
 }
 
 h1 {
 
-  font-size: 56px;
+  font-size: 46px;
 
   font-weight: 700;
 
   color: #252525;
 
-  margin-bottom: 10px;
+  margin-top: 25px;
+
+  margin-bottom: 12px;
 
   text-align: center;
+
+  line-height: 1.15;
 
 }
 
@@ -34,6 +46,8 @@ p {
 
 .dados {
 
+  margin-top: 12px;
+
   margin-bottom: 20px;
 
 }
@@ -42,33 +56,49 @@ p {
 
   display: block;
 
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 
   color: #252525;
+
+  font-size: 14px;
 
 }
 
 ion-input {
 
-  background: #d8d8d8;
+  --background: #1f1f1f;
 
-  border-radius: 6px;
+  --color: #ffffff;
+
+  --placeholder-color: #b5b5b5;
+
+  --placeholder-opacity: 1;
 
   --padding-start: 12px;
 
+  --padding-end: 12px;
+
+  border-radius: 6px;
+
   min-height: 50px;
+
+  margin-bottom: 12px;
 
 }
 
 ion-button {
 
-  margin-top: 25px;
+  margin-top: 18px;
 
   --background: #2f2f2f;
+
+  --color: #ffffff;
 
   --border-radius: 8px;
 
   height: 48px;
+
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.20);
 
 }
 
@@ -92,37 +122,55 @@ a {
 ========================= */
 
 .logo {
+
   text-align: center;
+
   margin-bottom: 25px;
+
 }
 
 .logo-icones {
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   height: 30px;
+
   margin-bottom: 2px;
+
 }
 
 .icone-ouvido {
+
   width: 28px;
+
   height: 28px;
+
   border-radius: 50%;
 
   background: #eeeeea;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 17px;
+
   color: #252525;
 
   z-index: 2;
+
 }
 
 .icone-fala {
+
   background: #252525;
+
   color: white;
 
   border-radius: 12px;
@@ -132,15 +180,23 @@ a {
   padding: 5px 7px;
 
   margin-left: -4px;
+
 }
 
 .logo h2 {
+
   font-size: 15px;
+
   font-weight: 700;
+
   color: #252525;
+
   margin: 0;
+
 }
 
 .logo h2 span {
+
   color: #d8b987;
+
 }

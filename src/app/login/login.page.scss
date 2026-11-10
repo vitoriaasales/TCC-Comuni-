@@ -40,12 +40,20 @@ ion-input {
   --padding-start: 12px;
   min-height: 50px;
 }
-
 ion-button {
+
   margin-top: 25px;
+
   --background: #2f2f2f;
+
+  --color: #ffffff;
+
   --border-radius: 8px;
+
   height: 48px;
+
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.20);
+
 }
 
 a {
