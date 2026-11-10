@@ -1,3 +1,4 @@
+
 <ion-content [fullscreen]="true">
 
   <div class="perfil-page">
@@ -9,95 +10,110 @@
         src="assets/trabalho3.jpg"
         alt="Imagem do perfil">
 
-      <!-- BOTÃO VOLTAR -->
       <ion-button
         class="btn-voltar"
         fill="clear"
         routerLink="/inicio">
+
         <ion-icon name="arrow-back-outline"></ion-icon>
         Voltar
+
       </ion-button>
 
-      
-
     </div>
-
 
     <!-- CONTEÚDO -->
     <div class="conteudo">
 
-      <h2>Sobre mim</h2>
+      <div class="titulo-perfil">
 
+        <h2>Sobre mim</h2>
 
-      <!-- CARREIRA -->
-      <div class="secao">
+        <ion-button
+          *ngIf="perfil"
+          fill="outline"
+          size="small"
+          (click)="editarPerfil()">
 
-        <h3>Sua Carreira</h3>
+          <ion-icon name="create-outline"></ion-icon>
+          Editar perfil
 
-        <div class="card-carreira">
-
-          <p>Nome: Jorge da Silva</p>
-          <p>Idade: 33 anos</p>
-          <p>Sexo: Masculino</p>
-          <p>Setor: 1 - Máquinas operárias</p>
-
-        </div>
+        </ion-button>
 
       </div>
 
-
-      <!-- O QUE EU PRECISO -->
-      <div class="secao necessidade-section">
-
-        <h3>O que eu preciso</h3>
-
-        <div class="card-necessidade">
-
-          <span class="mais">+</span>
-
-          <p>
-            Tenho déficit de audição e preciso
-            de ajuda em momentos de risco e
-            comprometimento à minha saúde
-          </p>
-
-        </div>
-
+      <!-- CARREGANDO -->
+      <div *ngIf="carregando" class="secao">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Carregando seu perfil...</p>
       </div>
 
+      <!-- DADOS DO PERFIL -->
+      <ng-container *ngIf="!carregando && perfil">
 
-      <!-- REGISTRO -->
-      <div class="registro">
+        <div class="secao">
 
-        <span class="placeholder">
-          Registre seu perfil/histórico
-        </span>
+          <h3>Sua Carreira</h3>
 
+          <div class="card-carreira">
 
-        <div class="registro-bottom">
+            <p>
+              <strong>Nome:</strong>
+              {{ perfil.nome }} {{ perfil.sobrenome }}
+            </p>
 
-          <div class="icones">
+            <p>
+              <strong>Idade:</strong>
+              {{ perfil.idade }} anos
+            </p>
 
-            <button>
-              <ion-icon name="image-outline"></ion-icon>
-            </button>
+            <p>
+              <strong>Empresa:</strong>
+              {{ perfil.empresa }}
+            </p>
 
-            <button>
-              <ion-icon name="code-outline"></ion-icon>
-            </button>
-
-            <button>
-              <ion-icon name="mic-outline"></ion-icon>
-            </button>
+            <p>
+              <strong>Setor:</strong>
+              {{ perfil.setor }}
+            </p>
 
           </div>
 
+        </div>
 
-          <button class="enviar">
-            <ion-icon name="arrow-up-outline"></ion-icon>
-          </button>
+        <!-- CONDIÇÃO -->
+        <div class="secao necessidade-section">
+
+          <h3>O que eu preciso</h3>
+
+          <div class="card-necessidade">
+
+            <span class="mais">+</span>
+
+            <p *ngIf="perfil.condicao">
+              {{ perfil.condicao }}
+            </p>
+
+            <p *ngIf="!perfil.condicao">
+              Você ainda não informou uma condição.
+              Se desejar, poderá adicioná-la ao editar seu perfil.
+            </p>
+
+          </div>
 
         </div>
+
+      </ng-container>
+
+      <!-- PERFIL NÃO ENCONTRADO -->
+      <div
+        *ngIf="!carregando && !perfil"
+        class="secao">
+
+        <p>
+          Não encontramos seus dados cadastrados.
+          Verifique se você concluiu o cadastro.
+        </p>
 
       </div>
 

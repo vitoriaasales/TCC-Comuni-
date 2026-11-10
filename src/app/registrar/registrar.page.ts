@@ -1,6 +1,8 @@
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth';
 
 @Component({
   selector: 'app-registrar',
@@ -11,10 +13,12 @@ import { AlertController } from '@ionic/angular';
 export class RegistrarPage {
 
   relatorioTexto: string = '';
+  salvando: boolean = false;
 
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private authService: AuthService
   ) {}
 
   async registrarRelatorio() {
@@ -28,21 +32,48 @@ export class RegistrarPage {
       });
 
       await alert.present();
-
       return;
     }
 
+    if (this.salvando) return;
 
-    const alert = await this.alertController.create({
-      header: 'Relatório registrado!',
-      message: 'O relatório foi registrado com sucesso.',
-      buttons: ['OK']
-    });
+    this.salvando = true;
 
-    await alert.present();
+    try {
 
-    this.router.navigateByUrl('/relatorios');
+      await this.authService.registrarRelatorio(
+        this.relatorioTexto.trim()
+      );
 
+      const alert = await this.alertController.create({
+        header: 'Relatório registrado!',
+        message: 'Seu relatório foi salvo com sucesso.',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+      await alert.onDidDismiss();
+
+      this.relatorioTexto = '';
+
+      await this.router.navigateByUrl('/relatorios');
+
+    } catch (erro: any) {
+
+      console.error('Erro ao registrar:', erro);
+
+      const alert = await this.alertController.create({
+        header: 'Erro',
+        message: erro.message || 'Não foi possível registrar o relatório.',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+
+    } finally {
+
+      this.salvando = false;
+
+    }
   }
-
 }

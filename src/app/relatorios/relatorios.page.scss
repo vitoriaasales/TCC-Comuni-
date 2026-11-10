@@ -425,3 +425,79 @@ ion-menu::part(container) {
   }
 
 }
+/* Cabeçalho dos relatórios */
+.cabecalho-relatorios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 13px;
+}
+
+.cabecalho-relatorios h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin: 0;
+}
+
+/* Botão registrar relatório */
+.botao-registrar {
+  background-color: #2f2f2f;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 11px 14px;
+
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+}
+
+.botao-registrar:active {
+  transform: scale(0.96);
+  background-color: #4a4a4a;
+}
+.acoes-relatorio {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.botao-editar,
+.botao-excluir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-editar {
+  background: #e8dfcf;
+  color: #292929;
+}
+
+.botao-excluir {
+  background: #f2dddd;
+  color: #9b2525;
+}
+
+.acoes-relatorio ion-icon {
+  font-size: 18px;
+}

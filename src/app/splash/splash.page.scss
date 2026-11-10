@@ -1,0 +1,85 @@
+
+/* FUNDO DA SPLASH */
+
+.splash-content {
+  --background: #F8F1E7;
+}
+
+.splash-container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #F8F1E7;
+  overflow: hidden;
+}
+
+/* LOGO */
+
+.logo-splash {
+  width: 230px;
+  height: 230px;
+  object-fit: contain;
+  animation: aparecer 1.2s ease-out both;
+}
+
+/* FRASE */
+
+.splash-subtitle {
+  color: #81766A;
+  font-size: 15px;
+  margin-top: 12px;
+  animation: aparecer 1.5s ease-out both;
+}
+
+/* BOLINHAS */
+
+.loading-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 45px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: #B99A76;
+  border-radius: 50%;
+  animation: pulsar 1s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsar {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

@@ -1,50 +1,33 @@
+
+/* ===== FUNDO DA PÁGINA ===== */
+
 .pagina {
   --background: #f7f3ec;
   background: #f7f3ec;
 }
 
-/* --- Menu Lateral --- */
-.menu-content {
-  --background: #ffffff;
-  background: #ffffff;
+/* ===== ESTRUTURA PRINCIPAL ===== */
+
+.pagina::part(scroll) {
+  display: flex;
+  flex-direction: column;
 }
 
-.menu-content ion-list {
-  padding: 20px 0;
-  background: #ffffff;
+.chat-layout {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f7f3ec;
 }
 
-.menu-content ion-item {
-  --background: #ffffff;
-  --color: #222222;
-  --padding-start: 20px;
-  --padding-end: 15px;
-  height: 55px;
-  border-bottom: 1px solid #eeeeee;
-}
+/* ===== BANNER ===== */
 
-.menu-content ion-label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.menu-content ion-icon {
-  color: #555555;
-  font-size: 21px;
-}
-
-.menu-content ion-toggle {
-  --track-background: #dddddd;
-  --track-background-checked: #087ac1;
-  --handle-background: #ffffff;
-  --handle-background-checked: #ffffff;
-}
-
-/* --- Banner Superior com Curva --- */
 .banner {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: clamp(190px, 30vh, 280px);
+  flex-shrink: 0;
   overflow: hidden;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -67,18 +50,6 @@
   z-index: 10;
 }
 
-.menu-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  z-index: 20;
-  --color: #333333;
-  --background: transparent;
-  font-size: 24px;
-}
-
 .botao-voltar {
   position: absolute;
   top: 85px;
@@ -91,40 +62,26 @@
   font-size: 13px;
   font-weight: 500;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-.botao-libras {
-  position: absolute;
-  right: 20px;
-  bottom: 25px;
-  width: 45px;
-  height: 45px;
-  padding: 0;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #087ac1;
-  z-index: 10;
-}
+/* ===== CONTEÚDO DO CHAT ===== */
 
-.libras-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Layout da Página do Chat --- */
 .conteudo {
-  padding: 24px 20px 40px;
-  background: #f7f3ec;
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  padding: 20px 20px calc(12px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  background: #f7f3ec;
 }
+
+/* ===== MENSAGEM INICIAL ===== */
 
 .mensagem {
   width: 100%;
-  padding: 16px;
+  flex-shrink: 0;
+  padding: 14px 16px;
   background: #f0ebe1;
   border: 1px solid #e0dad0;
   border-radius: 14px;
@@ -146,54 +103,81 @@
   color: #4a4a4a;
 }
 
-/* --- Cards de Seleção --- */
-.atendimentos {
+/* ===== ÁREA DAS MENSAGENS ===== */
+
+.area-conversa {
+  flex: 1;
+  min-height: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 40px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 2px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
 }
 
-.tipo-atendimento {
-  flex: 1;
+/* ===== BALÕES ===== */
+
+.balao-mensagem {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 85%;
+  padding: 13px 16px;
+  border-radius: 17px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  background: #f0ebe1;
+  border: 1px solid #e0dad0;
+  color: #333333;
+}
+
+.balao-mensagem strong {
+  font-size: 12px;
+  margin-bottom: 7px;
+  color: #333333;
+}
+
+.balao-mensagem p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #333333;
+}
+
+/* MENSAGEM DO USUÁRIO */
+
+.balao-mensagem.usuario {
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+/* RESPOSTA DA IA */
+
+.balao-mensagem.ia {
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+/* ERRO */
+
+.mensagem-erro {
+  color: #c62828;
+  font-size: 13px;
   text-align: center;
 }
 
-.icone-atendimento {
-  width: 100%;
-  height: 110px;
-  background: #ffffff;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
+/* ===== CAIXA DE DIGITAÇÃO ===== */
 
-.icone-atendimento ion-icon {
-  font-size: 70px;
-  color: #000000;
-}
-
-.ia-logo {
-  width: 65px;
-  height: 65px;
-}
-
-.tipo-atendimento p {
-  margin: 12px 0 0;
-  color: #333333;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 500;
-}
-
-/* --- Input do Chat --- */
 .chat-box {
   position: relative;
   width: 100%;
-  margin-top: 45px;
-  padding: 14px 16px 45px;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 14px 16px 44px;
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #e5e0d8;
@@ -214,11 +198,13 @@
   color: #a3a3a3;
 }
 
+/* ===== BOTÕES DA CAIXA ===== */
+
 .chat-acoes {
   position: absolute;
   left: 14px;
   right: 14px;
-  bottom: 12px;
+  bottom: 10px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -233,7 +219,6 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  cursor: pointer;
 }
 
 .chat-acoes .botao-enviar {
@@ -245,146 +230,24 @@
   color: #666666;
 }
 
-@media (min-width: 600px) {
-  .banner {
-    height: 320px;
-  }
-
-  .conteudo {
-    max-width: 480px;
-    margin: auto;
-  }
-  
-.area-conversa {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 15px;
-  min-height: 250px;
-}
-
-.balao-mensagem {
-  max-width: 85%;
-  padding: 12px 16px;
-  border-radius: 15px;
-  overflow-wrap: anywhere;
-}
-
-.balao-mensagem p {
-  margin: 6px 0 0;
-  white-space: pre-wrap;
-}
-
-.balao-mensagem.usuario {
-  align-self: flex-end;
-  background: #dce9ff;
-  color: #222;
-}
-
-.balao-mensagem.ia {
-  align-self: flex-start;
-  background: #f0f0f0;
-  color: #222;
-}
-
-.mensagem-erro {
-  color: #c62828;
-  text-align: center;
-}
-
 .botao-enviar:disabled {
   opacity: 0.5;
 }
 
-}
+/* ===== TELAS MAIORES ===== */
 
-/* =================================
-   BALÕES DA CONVERSA
-================================= */
+@media (min-width: 600px) {
+  .chat-layout {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-.area-conversa {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 20px 2px;
-  max-height: 45vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
+  .banner {
+    height: 280px;
+  }
 
-.balao-mensagem {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  max-width: 85%;
-  padding: 13px 16px;
-  border-radius: 17px;
-  box-sizing: border-box;
-  overflow-wrap: anywhere;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-}
-
-.balao-mensagem strong {
-  font-size: 12px;
-  margin-bottom: 7px;
-}
-
-.balao-mensagem p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-}
-
-/* Mensagem do usuário */
-
-.balao-mensagem.usuario {
-  align-self: flex-end;
-  background: #dce9ff;
-  border: 1px solid #c9dcfa;
-  border-bottom-right-radius: 5px;
-}
-
-.balao-mensagem.usuario strong {
-  color: #285b91;
-}
-
-/* Resposta da inteligência artificial */
-
-.balao-mensagem.ia {
-  align-self: flex-start;
-  background: #ffffff;
-  border: 1px solid #e8e2d9;
-  border-bottom-left-radius: 5px;
-}
-
-.balao-mensagem.ia strong {
-  color: #087ac1;
-}
-
-/* Mensagem de erro */
-
-.mensagem-erro {
-  color: #c62828;
-  font-size: 13px;
-  text-align: center;
-}
-
-/* --- COR DOS BALÕES DA CONVERSA --- */
-
-.balao-mensagem.usuario,
-.balao-mensagem.ia {
-  background: #f0ebe1 !important;
-  border: 1px solid #e0dad0;
-  color: #333333 !important;
-}
-
-.balao-mensagem.usuario strong,
-.balao-mensagem.ia strong {
-  color: #333333 !important;
-}
-
-.balao-mensagem.usuario p,
-.balao-mensagem.ia p {
-  color: #333333 !important;
+  .conteudo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }

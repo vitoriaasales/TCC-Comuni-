@@ -1,95 +1,22 @@
+
+/* =========================
+   PÁGINA
+========================= */
+
+ion-content {
+  --background: #faf7f2;
+}
+
 .container {
-
-  padding: 50px 30px;
-
+  width: 100%;
+  max-width: 430px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 35px 30px 30px;
+  box-sizing: border-box;
   position: relative;
-
-  background-color: rgb(255, 243, 226);
-
+  background: #faf7f2;
 }
-
-h1 {
-
-  font-size: 56px;
-
-  font-weight: 700;
-
-  color: #252525;
-
-  margin-bottom: 10px;
-
-  text-align: center;
-
-}
-
-p {
-
-  color: #7a7a7a;
-
-  margin-bottom: 35px;
-
-  text-align: center;
-
-}
-
-.dados {
-
-  margin-bottom: 20px;
-
-}
-
-.dados label {
-
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: #252525;
-
-}
-
-ion-input {
-
-  background: #d8d8d8;
-
-  border-radius: 6px;
-
-  --padding-start: 12px;
-
-  min-height: 50px;
-
-}
-
-ion-button {
-
-  margin-top: 25px;
-
-  --background: #2f2f2f;
-
-  --color: #ffffff;
-
-  --border-radius: 8px;
-
-  height: 48px;
-
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.20);
-
-}
-
-a {
-
-  display: block;
-
-  text-align: center;
-
-  color: #555;
-
-  margin-top: 18px;
-
-  text-decoration: underline;
-
-}
-
 
 /* =========================
    LOGO COMUNI+
@@ -97,76 +24,173 @@ a {
 
 .logo {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 32px;
 }
 
 .logo-icones {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  margin-bottom: 2px;
+  height: 43px;
+  margin-bottom: 5px;
 }
 
 .icone-ouvido {
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-
   background: #eeeeea;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 17px;
+  font-size: 23px;
   color: #252525;
-
   z-index: 2;
 }
 
 .icone-fala {
   background: #252525;
   color: white;
-
-  border-radius: 12px;
-
-  font-size: 11px;
-
-  padding: 5px 7px;
-
-  margin-left: -4px;
+  border-radius: 14px;
+  font-size: 14px;
+  padding: 7px 10px;
+  margin-left: -5px;
 }
 
 .logo h2 {
-  font-size: 15px;
-
-  font-weight: 700;
-
+  font-size: 21px;
+  font-weight: 800;
   color: #252525;
-
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .logo h2 span {
   color: #d8b987;
 }
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: #252525;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.container > p {
+  color: #77716b;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.dados {
+  margin-bottom: 20px;
+}
+
+.dados label {
+  display: block;
+  margin: 0 0 7px 7px;
+  color: #292929;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.dados ion-input {
+  --background: #dedede;
+  --color: #222222;
+  --placeholder-color: #777777;
+  --placeholder-opacity: 1;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+
+  min-height: 43px;
+  font-size: 13px;
+
+  background: #dedede;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   MENSAGENS DE ERRO
+========================= */
+
+.mensagem-erro {
+  color: #b33a32;
+  font-size: 11px;
+  margin: -10px 0 12px 7px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+ion-button {
+  --background: #2d2d2d;
+  --background-hover: #222222;
+  --color: #ffffff;
+  --border-radius: 8px;
+
+  height: 43px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+
+  margin: 18px 0 0;
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+ion-button::part(native) {
+  transition: 0.2s ease;
+}
+
+/* =========================
+   LINK LOGIN
+========================= */
+
+a {
+  display: block;
+  text-align: center;
+  color: #55504a;
+  font-size: 13px;
+  margin-top: 22px;
+  text-decoration: underline;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
 .botao-voltar {
-
   width: 38px;
-
   height: 38px;
 
   --background: #2f2f2f;
-
   --color: #ffffff;
-
   --border-radius: 8px;
 
-  --box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.20);
+  --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 
   font-size: 16px;
-
   margin: 0;
-
 }

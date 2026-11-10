@@ -1,3 +1,73 @@
+
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <!-- MENU LATERAL ÚNICO -->
+  <ion-menu
+    menuId="menu-principal"
+    contentId="main-content"
+    side="start">
+
+    <ion-content class="menu-content">
+      <ion-list lines="none">
+
+        <!-- PERFIL -->
+        <ion-item button routerLink="/sobremim">
+          <ion-label>Seu perfil</ion-label>
+        </ion-item>
+
+        <!-- INÍCIO -->
+        <ion-item button routerLink="/inicio">
+          <ion-label>Início</ion-label>
+          <ion-icon slot="end" name="home-outline"></ion-icon>
+        </ion-item>
+
+        <!-- CHECKLIST -->
+        <ion-item button routerLink="/seguranca">
+          <ion-label>Checklist de segurança</ion-label>
+        </ion-item>
+
+        <!-- SINAIS DE ALERTA -->
+        <ion-item button routerLink="/alerta">
+          <ion-label>Sinais de Alerta</ion-label>
+        </ion-item>
+
+        <!-- O QUE FAZER -->
+        <ion-item button routerLink="/risco">
+          <ion-label>O que fazer?</ion-label>
+        </ion-item>
+
+        <!-- OCORRÊNCIAS -->
+        <ion-item button routerLink="/ocorrencias">
+          <ion-label>Ocorrências</ion-label>
+        </ion-item>
+
+        <!-- RELATÓRIOS -->
+        <ion-item button routerLink="/relatorios">
+          <ion-label>Relatórios</ion-label>
+        </ion-item>
+
+        <!-- CHAT -->
+        <ion-item button routerLink="/chat">
+          <ion-label>Chat</ion-label>
+        </ion-item>
+
+        <!-- NOTIFICAÇÕES -->
+        <ion-item>
+          <ion-label>Notificações</ion-label>
+          <ion-toggle slot="end"></ion-toggle>
+        </ion-item>
+
+        <!-- SAIR -->
+        <ion-item button routerLink="/home">
+          <ion-label>Sair</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <!-- CONTEÚDO DAS PÁGINAS -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
 </ion-app>

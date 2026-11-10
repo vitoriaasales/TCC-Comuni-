@@ -1,440 +1,341 @@
-/* =========================
+
+/* ================================
    PÁGINA
-========================= */
+================================ */
 
 .pagina {
-  --background: #faf7f1;
-
-  background: #faf7f1;
-
-  position: relative;
+  --background: #f7f3ec;
+  --color: #292929;
+  background: #f7f3ec;
+  color: #292929 !important;
 }
 
 
-/* =========================
+/* ================================
    BANNER
-========================= */
+================================ */
 
 .banner {
   position: relative;
-
   width: 100%;
-  height: 228px;
-
+  height: 235px;
   overflow: hidden;
-
-  border-radius: 0 0 28px 28px;
-
   background: #ddd;
 }
-
-
-/* IMAGEM */
 
 .banner-img {
   width: 100%;
   height: 100%;
-
-  display: block;
-
   object-fit: cover;
+  object-position: center;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35px;
+  background: linear-gradient(transparent, rgba(255,255,255,0.25));
+  pointer-events: none;
 }
 
 
-/* =========================
+/* ================================
    LOGO
-========================= */
+================================ */
 
 .logo-app {
   position: absolute;
-
-  top: 68px;
-  left: 31px;
-
-  width: 76px;
-  height: auto;
-
-  z-index: 10;
+  top: 35px;
+  left: 23px;
+  z-index: 5;
+  width: 95px;
+  object-fit: contain;
 }
 
 
-/* =========================
+/* ================================
    BOTÃO VOLTAR
-========================= */
+================================ */
 
 .botao-voltar {
   position: absolute;
-
-  top: 92px;
-  left: 34px;
-
-  z-index: 15;
-
+  top: 85px;
+  left: 20px;
+  z-index: 10;
+  padding: 9px 17px;
+  background: #fff;
+  color: #292929;
   border: none;
-
-  background: #ffffff;
-
-  color: #555;
-
-  font-size: 11px;
-
-  padding: 6px 9px;
-
-  border-radius: 4px;
-
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 
-/* =========================
+/* ================================
    MENU
-========================= */
+================================ */
 
 .menu-botao {
-  position: absolute;
-
-  top: 42px;
-  right: 13px;
-
-  z-index: 20;
-
-  --color: #222;
-
-  font-size: 27px;
-
   display: block !important;
+  position: absolute !important;
+  top: 35px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  width: 40px !important;
+  height: 40px !important;
+  --color: #222;
+  --background: rgba(255,255,255,0.8);
+  --border-radius: 8px;
 }
 
 
-/* =========================
-   LIBRAS
-========================= */
-
-.botao-libras {
-  position: absolute;
-
-  right: 10px;
-  bottom: 9px;
-
-  width: 41px;
-  height: 41px;
-
-  padding: 0;
-
-  border: none;
-
-  border-radius: 7px;
-
-  overflow: hidden;
-
-  background: #005ca8;
-
-  z-index: 20;
-}
-
-
-.libras-icon {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-
-/* =========================
+/* ================================
    CONTEÚDO
-========================= */
+================================ */
 
 .conteudo {
-  padding: 24px 38px 110px;
-
-  box-sizing: border-box;
+  padding: 25px 18px 35px;
+  color: #292929 !important;
 }
-
-
-/* =========================
-   TÍTULO
-========================= */
 
 .conteudo h1 {
-  margin: 0 0 18px 4px;
-
-  font-size: 20px;
-
-  line-height: 1.2;
-
+  margin: 0 0 22px;
+  color: #292929 !important;
+  font-size: 23px;
   font-weight: 700;
-
-  color: #292929;
 }
 
 
-/* =========================
-   CAIXA DO RELATÓRIO
-========================= */
+/* ================================
+   ÁREA DO RELATÓRIO
+================================ */
 
 .relatorio {
-  width: 100%;
-
-  height: 247px;
-
-  box-sizing: border-box;
-
-  background: #ffffff;
-
-  border: 1px solid #d9d9d9;
-
-  border-radius: 6px;
-
-  padding: 8px 9px;
-
-  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e2ddd4;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.04);
 }
-
-
-/* TÍTULO DENTRO DO RELATÓRIO */
 
 .relatorio h2 {
-  margin: 0;
-
-  font-size: 19px;
-
-  line-height: 1.2;
-
-  font-weight: 600;
-
-  color: #333;
+  margin: 0 0 9px;
+  color: #303030 !important;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 
-/* =========================
-   CAIXA DE REGISTRO
-========================= */
+/* ================================
+   CAIXA DE ESCRITA
+================================ */
 
 .chat-box {
-  position: fixed;
-
-  left: 47px;
-  right: 47px;
-  bottom: 19px;
-
-  height: 88px;
-
-  box-sizing: border-box;
-
-  padding: 11px 11px 8px;
-
-  background: #ffffff;
-
-  border: 1px solid #dedede;
-
+  background: #fff !important;
+  border: 1px solid #ded8ce;
   border-radius: 14px;
-
-  z-index: 50;
+  padding: 12px;
+  margin-top: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
+/* Campo Ionic */
+.chat-box ion-textarea {
+  --background: #ffffff !important;
+  --color: #292929 !important;
+  --placeholder-color: #777777 !important;
+  --placeholder-opacity: 1 !important;
 
-/* INPUT */
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 
-.chat-box input {
+  color: #292929 !important;
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 115px;
   width: 100%;
+}
 
-  height: 30px;
+/* Texto digitado */
+.chat-box ion-textarea::part(native) {
+  color: #292929 !important;
+  -webkit-text-fill-color: #292929 !important;
+  background: #ffffff !important;
+  opacity: 1 !important;
+}
 
-  padding: 0;
-
-  margin: 0;
-
-  border: none;
-
-  outline: none;
-
-  background: transparent;
-
-  color: #333;
-
-  font-size: 13px;
-
-  box-sizing: border-box;
+/* Texto de orientação */
+.chat-box ion-textarea::part(native)::placeholder {
+  color: #777777 !important;
+  -webkit-text-fill-color: #777777 !important;
+  opacity: 1 !important;
 }
 
 
-.chat-box input::placeholder {
-  color: #b9b9b9;
-
-  opacity: 1;
-}
-
-
-/* =========================
-   BOTÕES
-========================= */
+/* ================================
+   AÇÕES
+================================ */
 
 .chat-acoes {
   display: flex;
-
   align-items: center;
-
-  gap: 14px;
-
-  margin-top: 7px;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+  margin-top: 8px;
 }
-
 
 .chat-acoes button {
-  width: 22px;
-  height: 22px;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
+  width: 37px;
+  height: 37px;
   display: flex;
-
   align-items: center;
   justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #f0ebe1;
+  color: #444;
+}
 
-  color: #222;
+.chat-acoes button ion-icon {
+  font-size: 20px;
+}
 
-  font-size: 17px;
+.chat-acoes button:disabled {
+  opacity: 0.45;
 }
 
 
-/* =========================
+/* ================================
    BOTÃO ENVIAR
-========================= */
+================================ */
 
-.botao-enviar {
-  margin-left: auto;
+.chat-acoes .botao-enviar {
+  width: 43px;
+  height: 43px;
+  background: #2f2f2f;
+  color: #fff;
+  border-radius: 50%;
+}
 
-  width: 29px !important;
-  height: 29px !important;
+.chat-acoes .botao-enviar ion-icon {
+  font-size: 23px;
+}
 
-  border-radius: 50% !important;
-
-  background: #e5e5e5 !important;
-
-  border: 1px solid #c8c8c8 !important;
-
-  color: #aaa !important;
-
-  font-size: 17px !important;
+.chat-acoes .botao-enviar:disabled {
+  background: #999;
+  opacity: 0.7;
 }
 
 
-/* =========================
+/* ================================
    MENU LATERAL
-========================= */
+================================ */
 
 ion-menu {
-  --width: 280px;
-
-  z-index: 10000;
+  --width: 260px;
 }
 
+ion-menu::part(backdrop) {
+  background: rgba(0,0,0,0.25);
+}
+
+ion-menu::part(container) {
+  box-shadow: 4px 0 12px rgba(0,0,0,0.10);
+}
 
 .menu-content {
-  --background: #faf7f1;
-
-  background: #faf7f1;
+  --background: #fff;
+  color: #292929;
 }
-
 
 .menu-content ion-list {
-  background: transparent;
-
-  padding: 20px 10px;
+  background: #fff;
+  padding: 70px 0 0;
+  margin: 0;
 }
-
 
 .menu-content ion-item {
-  --background: transparent;
-  --color: #333;
-
-  --padding-start: 16px;
-  --inner-padding-end: 12px;
-
-  min-height: 48px;
-
-  margin-bottom: 5px;
-
-  border-radius: 10px;
-
+  --background: #fff;
+  --background-hover: #f5f5f5;
+  --background-activated: #f5f5f5;
+  --color: #292929;
+  --padding-start: 48px;
+  --padding-end: 15px;
+  --min-height: 44px;
+  height: 44px;
+  margin: 0;
   font-size: 14px;
-}
-
-
-.menu-content ion-item:active {
-  --background: #e8e3da;
-}
-
-
-.menu-content ion-icon {
-  color: #333;
-
-  font-size: 21px;
-}
-
-
-.perfil-menu {
-  --background: #ffffff !important;
-
-  min-height: 60px !important;
-
-  margin-bottom: 20px !important;
-
-  border-radius: 12px !important;
-
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
-}
-
-
-.perfil-container {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  font-size: 16px;
-
   font-weight: 600;
 }
 
+.menu-content ion-label {
+  color: #292929 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
 
-/* =========================
-   RESPONSIVO
-========================= */
+.perfil-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
-@media (max-width: 360px) {
+.perfil-container span {
+  color: #292929 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
 
-  .conteudo {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+.menu-content ion-icon {
+  color: #777;
+  font-size: 23px;
+  margin-right: 16px;
+}
 
-  .chat-box {
-    left: 38px;
-    right: 38px;
-  }
+.menu-content ion-item + ion-item {
+  margin-top: 3px;
+}
 
+.menu-content ion-toggle {
+  --background: #ddd;
+  --background-checked: #ddd;
+  --handle-background: #fff;
+  --handle-background-checked: #fff;
+  width: 30px;
+  height: 18px;
+  margin-right: 17px;
 }
 
 
-@media (min-width: 600px) {
+/* ================================
+   RESPONSIVIDADE
+================================ */
 
+@media (min-width: 600px) {
   .banner {
     height: 300px;
   }
 
   .conteudo {
-    max-width: 600px;
-
+    max-width: 650px;
     margin: auto;
+    padding: 30px 20px 40px;
   }
 
+  .conteudo h1 {
+    font-size: 26px;
+  }
+
+  .chat-box {
+    padding: 16px;
+  }
 }

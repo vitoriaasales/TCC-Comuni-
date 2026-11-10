@@ -1,6 +1,16 @@
+
 <ion-content [fullscreen]="true" class="pagina">
 
   <div class="container">
+
+    <!-- SETA VOLTAR -->
+    <ion-button
+      fill="clear"
+      class="botao-voltar"
+      routerLink="/home"
+      aria-label="Voltar para Home">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
 
     <!-- LOGO -->
     <div class="logo">
@@ -8,72 +18,124 @@
         <span class="icone-ouvido">◉</span>
         <span class="icone-fala">•••</span>
       </div>
+
       <h2>Comuni<span>+</span></h2>
     </div>
 
-    <!-- TÍTULO -->
     <h1>Preencha seus<br>dados</h1>
 
-    <!-- CAMPOS -->
-    <div class="formulario">
+    <p>Precisamos de algumas informações para personalizar seu perfil.</p>
 
-      <div class="linha">
-        <div class="campo pequeno">
-          <label>Nome</label>
-          <ion-input fill="solid"></ion-input>
+    <form [formGroup]="dadosForm" (ngSubmit)="finalizarCadastro()">
+
+      <div class="formulario">
+
+        <div class="linha">
+
+          <div class="campo pequeno">
+            <label>Nome</label>
+            <ion-input
+              fill="solid"
+              placeholder="Seu nome"
+              formControlName="nome">
+            </ion-input>
+          </div>
+
+          <div class="campo pequeno">
+            <label>Sobrenome</label>
+            <ion-input
+              fill="solid"
+              placeholder="Sobrenome"
+              formControlName="sobrenome">
+            </ion-input>
+          </div>
+
         </div>
 
-        <div class="campo pequeno">
-          <label>Sobrenome</label>
-          <ion-input fill="solid"></ion-input>
+        <div class="campo">
+          <label>Idade</label>
+          <ion-input
+            type="number"
+            fill="solid"
+            placeholder="Sua idade"
+            formControlName="idade">
+          </ion-input>
         </div>
-      </div>
 
-      <div class="campo">
-        <label>Idade</label>
-        <ion-input fill="solid"></ion-input>
-      </div>
+        <div class="campo">
+          <label>Empresa em que trabalha</label>
+          <ion-input
+            fill="solid"
+            placeholder="Nome da empresa"
+            formControlName="empresa">
+          </ion-input>
+        </div>
 
-      <div class="campo">
-        <label>Empresa em que trabalha</label>
-        <ion-input fill="solid"></ion-input>
-      </div>
+        <div class="campo">
+          <label>Setor</label>
+          <ion-input
+            fill="solid"
+            placeholder="Seu setor de trabalho"
+            formControlName="setor">
+          </ion-input>
+        </div>
 
-      <div class="campo">
-        <label>Setor</label>
-        <ion-input fill="solid"></ion-input>
-      </div>
+        <!-- CÓDIGO DE INSTRUTOR -->
+        <div class="campo">
+          <label>Código de instrutor (opcional)</label>
 
-      <div class="campo">
-        <label>Qual sua condição e descreva sobre ela</label>
-        <ion-input fill="solid"></ion-input>
-      </div>
+          <ion-input
+            fill="solid"
+            placeholder="Informe o código, se tiver"
+            formControlName="codigoInstrutor">
+          </ion-input>
 
-      <!-- TERMOS -->
-      <div class="termos">
+          <small class="texto-ajuda">
+            Se você não possui um código, será cadastrado como funcionário.
+          </small>
+        </div>
 
-        <ion-checkbox></ion-checkbox>
+        <div class="campo">
+          <label>Qual sua condição? (opcional)</label>
 
-        <a href="/condicoes"> 
-        <p>
+          <ion-textarea
+            fill="solid"
+            placeholder="Descreva sua condição, caso queira."
+            formControlName="condicao"
+            autoGrow="true">
+          </ion-textarea>
+        </div>
+
+        <!-- TERMOS -->
+        <div class="termos">
+
+          <ion-checkbox
+            formControlName="aceitouTermos">
+          </ion-checkbox>
+
+          <p>
             Li e concordo com os
-            <strong>Termos e Condições de uso</strong> do aplicativo Comuni+.
-          Ao utilizar este aplicativo, o usuário concorda com os
-          <strong>Termos e Condições de uso</strong>, reconhecendo que a
-          plataforma tem o objetivo de auxiliar na comunicação e o
-          acesso à informação de forma inclusiva e responsável.
-        </p>
-        </a>
-      
+            <a routerLink="/condicoes">
+              <strong>Termos e Condições de uso</strong>
+            </a>
+            do aplicativo Comuni+.
+          </p>
+
+        </div>
+
+        <ion-button
+          expand="block"
+          class="botao"
+          type="submit"
+          [disabled]="salvando">
+
+          {{ salvando ? 'Salvando...' : 'Finalizar cadastro' }}
+
+        </ion-button>
 
       </div>
 
-      <!-- BOTÃO -->
-      <ion-button expand="block" class="botao" href="/inicio">
-        Enviar
-      </ion-button>
-
-    </div>
+    </form>
 
   </div>
 

@@ -1,18 +1,15 @@
-import { Component } from '@angular/core';
 
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   Validators
 } from '@angular/forms';
-
 import { Router } from '@angular/router';
-
 import {
   AlertController,
   LoadingController
 } from '@ionic/angular';
-
 import { AuthService } from '../services/auth';
 
 @Component({
@@ -24,6 +21,7 @@ import { AuthService } from '../services/auth';
 export class CadastroPage {
 
   cadastroForm: FormGroup;
+  cadastrando = false;
 
   constructor(
     private fb: FormBuilder,
@@ -32,95 +30,76 @@ export class CadastroPage {
     private alertController: AlertController,
     private loadingController: LoadingController
   ) {
-
     this.cadastroForm = this.fb.group({
-
-      nome: ['', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
-
-      cpf: ['', [
-        Validators.required,
-        Validators.minLength(11),
-        Validators.maxLength(11)
-      ]],
-
-      telefone: ['', [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(11)
-      ]],
-
       email: ['', [
         Validators.required,
         Validators.email
       ]],
-
       senha: ['', [
         Validators.required,
         Validators.minLength(6)
       ]]
-
     });
-
   }
 
-  async cadastrar() {
-
-    if (this.cadastroForm.invalid) {
-
+  async cadastrar(): Promise<void> {
+    if (this.cadastroForm.invalid || this.cadastrando) {
       this.cadastroForm.markAllAsTouched();
-
       return;
     }
 
-    const { email, senha } = this.cadastroForm.value;
+    this.cadastrando = true;
 
     const loading = await this.loadingController.create({
-      message: 'Cadastrando...'
+      message: 'Criando sua conta...'
     });
 
     await loading.present();
 
     try {
+      const { email, senha } = this.cadastroForm.value;
 
-      const resultado = await this.authService.signUp(
-        email,
-        senha
-      );
+      const resultado = await this.authService.signUp(email, senha);
 
-      // VERIFICA SE O SUPABASE DEVOLVEU ERRO
       if (resultado.error) {
         throw resultado.error;
       }
 
       await loading.dismiss();
 
-      const alert = await this.alertController.create({
-        header: 'Cadastro realizado!',
-        message: 'Cadastro realizado com sucesso. Agora faça login.',
-        buttons: ['OK']
-      });
+      if (resultado.data.session) {
+        await this.router.navigateByUrl('/dados', {
+          replaceUrl: true
+        });
+      } else {
+        const alerta = await this.alertController.create({
+          header: 'Confirme seu e-mail',
+          message:
+            'Sua conta foi criada! Confirme seu endereço de e-mail e depois faça login para completar seus dados.',
+          buttons: [{
+            text: 'Ir para login',
+            handler: () => {
+              this.router.navigateByUrl('/login');
+            }
+          }]
+        });
 
-      await alert.present();
-
-      this.router.navigateByUrl('/login');
+        await alerta.present();
+      }
 
     } catch (error: any) {
-
       await loading.dismiss();
 
-      const alert = await this.alertController.create({
+      const alerta = await this.alertController.create({
         header: 'Erro no cadastro',
-        message: error.message || 'Não foi possível concluir o cadastro.',
+        message: error.message || 'Não foi possível criar sua conta.',
         buttons: ['OK']
       });
 
-      await alert.present();
+      await alerta.present();
 
+    } finally {
+      this.cadastrando = false;
     }
-
   }
-
 }

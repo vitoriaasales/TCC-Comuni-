@@ -1,100 +1,24 @@
-<!-- MENU -->
-<ion-menu
-  menuId="menu-principal"
-  contentId="main-content"
-  side="start">
 
-  <ion-content class="menu-content">
+<ion-content [fullscreen]="true" class="background">
 
-    <ion-list lines="none">
+  <!-- MENU -->
+  <ion-menu-button
+    menu="menu-principal"
+    class="menu-button">
+  </ion-menu-button>
 
-      <ion-item
-        button
-        routerLink="/sobremim"
-        class="perfil-menu">
-
-        <div class="perfil-container">
-          <span>Seu perfil</span>
-        </div>
-
-      </ion-item>
-
-      <ion-item button routerLink="/inicio">
-        <ion-label>Início</ion-label>
-        <ion-icon slot="end" name="home-outline"></ion-icon>
-      </ion-item>
-
-      <ion-item button routerLink="/seguranca">
-        <ion-label>Checklist de segurança</ion-label>
-      </ion-item>
-
-      <ion-item button routerLink="/alerta">
-        <ion-label>Sinais de Alerta</ion-label>
-      </ion-item>
-
-      <ion-item button routerLink="/risco">
-        <ion-label>O que fazer?</ion-label>
-      </ion-item>
-
-      <ion-item button routerLink="/ocorrencias">
-        <ion-label>Ocorrências</ion-label>
-      </ion-item>
-
-      <ion-item button routerLink="/relatorios">
-        <ion-label>Relatórios</ion-label>
-      </ion-item>
-
-      <ion-item button routerLink="/chat">
-        <ion-label>Chat</ion-label>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Notificações</ion-label>
-        <ion-toggle slot="end"></ion-toggle>
-      </ion-item>
-
-      <ion-item button routerLink="/home">
-        <ion-label>Sair</ion-label>
-      </ion-item>
-
-    </ion-list>
-
-  </ion-content>
-
-</ion-menu>
-
-
-<!-- CONTEÚDO -->
-<ion-content
-  [fullscreen]="true"
-  class="background"
-  id="main-content">
-
-
-  <!-- Banner -->
-
+  <!-- BANNER -->
   <div class="banner">
-
-    <!-- BOTÃO DO MENU -->
-    <ion-menu-button
-      menu="menu-principal"
-      class="menu-button">
-    </ion-menu-button>
-
 
     <img
       src="../assets/trabalho4.jpg"
-      class="banner-img">
-
-
-    <!-- Logo -->
+      class="banner-img"
+      alt="Profissionais trabalhando">
 
     <img
       src="../assets/logo.png"
-      class="logo">
-
-
-    <!-- Botão Voltar -->
+      class="logo"
+      alt="Comuni+">
 
     <ion-button
       class="btn-voltar"
@@ -104,30 +28,81 @@
       Voltar
     </ion-button>
 
-
-
   </div>
 
-
-  <!-- Conteúdo -->
-
+  <!-- CONTEÚDO -->
   <div class="conteudo">
 
-    <p class="subtitulo">
-      Situação de risco
+    <p class="subtitulo">Situação de risco</p>
+
+    <h1>Sinais de Alerta</h1>
+
+    <p class="descricao">
+      Identifique uma situação de perigo e selecione para conhecer
+      os sinais de alerta e as orientações de segurança.
     </p>
 
-    <h1>
-      Sinais de Alerta
-    </h1>
+    <!-- INCÊNDIO -->
+    <ion-card
+      class="card-alerta"
+      button="true"
+      (click)="abrirDetalhes('incendio')">
 
+      <div class="icone-alerta incendio">
+        <ion-icon name="flame-outline"></ion-icon>
+      </div>
 
-    <!-- Imagem única com todos os alertas -->
+      <ion-card-content>
+        <h2>Incêndio</h2>
+        <p>Fumaça, fogo e aumento anormal de temperatura.</p>
+        <span>Ver orientações <ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </ion-card-content>
 
-    <img
-      src="../assets/riscos.png"
-      class="imagem-riscos"
-      alt="Sinais de Alerta">
+    </ion-card>
+
+    <!-- CHOQUE ELÉTRICO -->
+    <ion-card
+      class="card-alerta"
+      button="true"
+      (click)="abrirDetalhes('eletrico')">
+
+      <div class="icone-alerta eletrico">
+        <ion-icon name="flash-outline"></ion-icon>
+      </div>
+
+      <ion-card-content>
+        <h2>Choque elétrico</h2>
+        <p>Fios expostos, equipamentos danificados e faíscas.</p>
+        <span>Ver orientações <ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </ion-card-content>
+
+    </ion-card>
+
+    <!-- VAZAMENTO QUÍMICO -->
+    <ion-card
+      class="card-alerta"
+      button="true"
+      (click)="abrirDetalhes('quimico')">
+
+      <div class="icone-alerta quimico">
+        <ion-icon name="flask-outline"></ion-icon>
+      </div>
+
+      <ion-card-content>
+        <h2>Vazamento químico</h2>
+        <p>Recipientes danificados, derramamentos e avisos de substâncias perigosas.</p>
+        <span>Ver orientações <ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </ion-card-content>
+
+    </ion-card>
+
+    <div class="aviso-seguranca">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <p>
+        Em qualquer situação de perigo, siga o plano de emergência
+        da empresa e as orientações dos profissionais responsáveis.
+      </p>
+    </div>
 
   </div>
 

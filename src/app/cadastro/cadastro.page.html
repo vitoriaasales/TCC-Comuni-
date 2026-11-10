@@ -1,170 +1,79 @@
+
 <ion-content [fullscreen]="true">
 
   <div class="container">
 
-    <!-- LOGO -->
-
     <div class="logo">
-
       <div class="logo-icones">
-
         <span class="icone-ouvido">◉</span>
         <span class="icone-fala">•••</span>
-
       </div>
 
       <h2>Comuni<span>+</span></h2>
-
     </div>
 
     <h1>Cadastro</h1>
 
-    <p>Preencha os dados abaixo para acessar todos os recursos da plataforma</p>
+    <p>
+      Crie sua conta para acessar todos os recursos da plataforma.
+    </p>
 
-
-    <!-- FORMULÁRIO -->
-    <form
-      [formGroup]="cadastroForm"
-      (ngSubmit)="cadastrar()"
-    >
+    <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
 
       <div class="dados">
-
-        <label>Nome Completo</label>
-
-        <ion-input
-          placeholder="Nome"
-          fill="solid"
-          formControlName="nome">
-        </ion-input>
-
-        <!-- ERRO NOME -->
-        <div
-          class="mensagem-erro"
-          *ngIf="cadastroForm.get('nome')?.touched && cadastroForm.get('nome')?.invalid">
-
-          <span *ngIf="cadastroForm.get('nome')?.errors?.['required']">
-            Nome é obrigatório.
-          </span>
-
-        </div>
-
-
-        <label>CPF</label>
-
-        <ion-input
-          placeholder="Cadastro Pessoa Física"
-          fill="solid"
-          formControlName="cpf">
-        </ion-input>
-
-        <!-- ERRO CPF -->
-        <div
-          class="mensagem-erro"
-          *ngIf="cadastroForm.get('cpf')?.touched && cadastroForm.get('cpf')?.invalid">
-
-          <span *ngIf="cadastroForm.get('cpf')?.errors?.['required']">
-            CPF é obrigatório.
-          </span>
-
-        </div>
-
-
-        <label>Telefone</label>
-
-        <ion-input
-          placeholder="Telefone"
-          fill="solid"
-          formControlName="telefone">
-        </ion-input>
-
-        <!-- ERRO TELEFONE -->
-        <div
-          class="mensagem-erro"
-          *ngIf="cadastroForm.get('telefone')?.touched && cadastroForm.get('telefone')?.invalid">
-
-          <span *ngIf="cadastroForm.get('telefone')?.errors?.['required']">
-            Telefone é obrigatório.
-          </span>
-
-        </div>
-
 
         <label>Email</label>
 
         <ion-input
-          placeholder="example1@gmail.com"
+          type="email"
+          placeholder="example@gmail.com"
           fill="solid"
           formControlName="email">
         </ion-input>
 
-        <!-- ERRO EMAIL -->
         <div
           class="mensagem-erro"
           *ngIf="cadastroForm.get('email')?.touched && cadastroForm.get('email')?.invalid">
 
-          <span *ngIf="cadastroForm.get('email')?.errors?.['required']">
-            E-mail é obrigatório.
-          </span>
-
-          <span *ngIf="cadastroForm.get('email')?.errors?.['email']">
-            Digite um e-mail válido.
-          </span>
+          Digite um e-mail válido.
 
         </div>
-
 
         <label>Senha</label>
 
         <ion-input
           type="password"
-          placeholder="password123"
+          placeholder="Digite sua senha"
           fill="solid"
           formControlName="senha">
         </ion-input>
 
-        <!-- ERRO SENHA -->
         <div
           class="mensagem-erro"
           *ngIf="cadastroForm.get('senha')?.touched && cadastroForm.get('senha')?.invalid">
 
-          <span *ngIf="cadastroForm.get('senha')?.errors?.['required']">
-            Senha é obrigatória.
-          </span>
+          A senha precisa ter pelo menos 6 caracteres.
 
         </div>
 
       </div>
 
-
       <br><br>
 
-
-      <!-- BOTÃO CADASTRAR -->
       <ion-button
         expand="block"
-        type="submit">
+        type="submit"
+        [disabled]="cadastrando">
 
-        Cadastrar
+        {{ cadastrando ? 'Cadastrando...' : 'Cadastrar' }}
 
       </ion-button>
 
     </form>
 
-
     <br>
 
-    
-
-    <ion-button expand="block" href="/dados">
-
-      Preencher dados específicos
-
-    </ion-button>
-
-
-    <a href="/login">Já tenho conta</a>
-    <br>
+    <a routerLink="/login">Já tenho conta</a>
 
   </div>
 

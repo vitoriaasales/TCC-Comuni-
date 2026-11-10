@@ -1,3 +1,4 @@
+
 <!-- =========================
      MENU LATERAL
 ========================= -->
@@ -11,117 +12,53 @@
 
     <ion-list lines="none">
 
-      <!-- PERFIL -->
-      <ion-item
-        button
-        routerLink="/sobremim"
-        class="perfil-menu">
-
+      <ion-item button routerLink="/sobremim" class="perfil-menu">
         <div class="perfil-container">
           <span>Seu perfil</span>
         </div>
-
       </ion-item>
 
-
-      <!-- INÍCIO -->
-      <ion-item
-        button
-        routerLink="/inicio">
-
+      <ion-item button routerLink="/inicio">
         <ion-label>Início</ion-label>
-
-        <ion-icon
-          slot="end"
-          name="home-outline">
-        </ion-icon>
-
+        <ion-icon slot="end" name="home-outline"></ion-icon>
       </ion-item>
 
-
-      <!-- CHECKLIST -->
-      <ion-item
-        button
-        routerLink="/seguranca">
-
+      <ion-item button routerLink="/seguranca">
         <ion-label>Checklist de segurança</ion-label>
-
       </ion-item>
 
-
-      <!-- SINAIS DE ALERTA -->
-      <ion-item
-        button
-        routerLink="/alerta">
-
+      <ion-item button routerLink="/alerta">
         <ion-label>Sinais de Alerta</ion-label>
-
       </ion-item>
 
-
-      <!-- O QUE FAZER -->
-      <ion-item
-        button
-        routerLink="/risco">
-
+      <ion-item button routerLink="/risco">
         <ion-label>O que fazer?</ion-label>
-
       </ion-item>
 
-
-      <!-- OCORRÊNCIAS -->
-      <ion-item
-        button
-        routerLink="/ocorrencias">
-
+      <ion-item button routerLink="/ocorrencias">
         <ion-label>Ocorrências</ion-label>
-
       </ion-item>
 
-
-      <!-- RELATÓRIOS -->
-      <ion-item
-        button
-        routerLink="/relatorios">
-
+      <ion-item button routerLink="/relatorios">
         <ion-label>Relatórios</ion-label>
-
       </ion-item>
 
-
-      <!-- CHAT -->
-      <ion-item
-        button
-        routerLink="/chat">
-
+      <ion-item button routerLink="/chat">
         <ion-label>Chat</ion-label>
-
       </ion-item>
 
-
-      <!-- NOTIFICAÇÕES -->
       <ion-item>
-
         <ion-label>Notificações</ion-label>
-
         <ion-toggle slot="end"></ion-toggle>
-
       </ion-item>
 
-
-      <!-- SAIR -->
-      <ion-item
-        button
-        routerLink="/home">
-
+      <ion-item button routerLink="/home">
         <ion-label>Sair</ion-label>
-
       </ion-item>
 
     </ion-list>
 
   </ion-content>
-
 </ion-menu>
 
 
@@ -134,10 +71,7 @@
   class="pagina"
   id="main-content">
 
-
-  <!-- =========================
-       BANNER
-  ========================= -->
+  <!-- BANNER -->
 
   <div class="banner">
 
@@ -146,132 +80,128 @@
       src="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2020_06/pia_HOme_govSP.jpg"
       alt="Funcionário trabalhando">
 
-
-    <!-- BOTÃO VOLTAR -->
     <ion-button
       class="btn-voltar"
       size="small"
       fill="solid"
       routerLink="/inicio">
-
       Voltar
-
     </ion-button>
 
-
-    <!-- MENU -->
     <ion-menu-button
       menu="menu-principal"
       class="menu-button">
     </ion-menu-button>
 
-
-
   </div>
 
 
-  <!-- =========================
-       CONTEÚDO
-  ========================= -->
+  <!-- CONTEÚDO -->
 
   <div class="conteudo">
 
-
-    <!-- TÍTULO -->
     <div class="titulo-area">
 
       <h1>Relatórios</h1>
 
+      <button
+        *ngIf="ehInstrutor && !carregandoPermissao"
+        routerLink="/registrar"
+        class="botao-registrar">
+        REGISTRAR RELATÓRIO
+      </button>
 
-      <!-- BOTÃO REGISTRAR -->
-      <ion-button
-        class="btn-registrar"
-        *ngIf="usuarioLogado?.tipo === 'gerente'"
-        routerLink="/registrar">
+    </div>
 
-        Registrar Relatório
 
+    <!-- CARREGANDO -->
+
+    <div
+      *ngIf="carregandoRelatorios"
+      class="estado-lista">
+
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Carregando relatórios...</p>
+
+    </div>
+
+
+    <!-- ERRO -->
+
+    <div
+      *ngIf="!carregandoRelatorios && erroCarregamento"
+      class="estado-lista">
+
+      <p>{{ erroCarregamento }}</p>
+
+      <ion-button (click)="carregarRelatorios()">
+        Tentar novamente
       </ion-button>
 
     </div>
 
 
-    <!-- =========================
-         RELATÓRIO 0012
-    ========================= -->
+    <!-- LISTA VAZIA -->
 
-    <div class="relatorio-card">
+    <div
+      *ngIf="!carregandoRelatorios && !erroCarregamento && relatorios.length === 0"
+      class="estado-lista">
 
-      <h2>Relatório nº 0012</h2>
+      <ion-icon name="document-text-outline"></ion-icon>
+
+      <p>Nenhum relatório registrado até o momento.</p>
+
+    </div>
+
+
+    <!-- RELATÓRIOS -->
+
+    <div
+      *ngFor="let relatorio of relatorios"
+      class="relatorio-card">
+
+      <h2>Relatório nº {{ relatorio.id }}</h2>
 
       <ul>
-
-        <li>Data: 26/04/2026</li>
-
-        <li>Local: Setor de Produção</li>
-
-        <li>Tipo: Acidente de trabalho</li>
-
+        <li>
+          Data: {{ formatarData(relatorio.criado_em) }}
+        </li>
       </ul>
-
 
       <h3>Descrição</h3>
 
       <ul class="descricao">
-
-        <li>
-
-          Colaborador sofreu um corte na mão ao operar
-          máquina devido ao uso incorreto e falta de EPI.
-          Foi atendido, orientado e reforçado o uso de luvas.
-          Como prevenção, serão feitos treinamentos e maior
-          fiscalização do uso de EPIs.
-
-        </li>
-
+        <li>{{ relatorio.conteudo }}</li>
       </ul>
 
-    </div>
 
+      <!-- AÇÕES EXCLUSIVAS DO INSTRUTOR -->
 
-    <!-- =========================
-         RELATÓRIO 0013
-    ========================= -->
+      <div
+        *ngIf="ehInstrutor && !carregandoPermissao"
+        class="acoes-relatorio">
 
-    <div class="relatorio-card">
+        <button
+          type="button"
+          class="botao-editar"
+          (click)="editarRelatorio(relatorio)">
 
-      <h2>Relatório nº 0013</h2>
+          <ion-icon name="create-outline"></ion-icon>
+          Editar
 
-      <ul>
+        </button>
 
-        <li>Data: 29/04/2026</li>
+        <button
+          type="button"
+          class="botao-excluir"
+          (click)="excluirRelatorio(relatorio)">
 
-        <li>Local: Setor de Análise</li>
+          <ion-icon name="trash-outline"></ion-icon>
+          Excluir
 
-        <li>Tipo: Vazamento</li>
+        </button>
 
-      </ul>
-
-    </div>
-
-
-    <!-- =========================
-         RELATÓRIO 0014
-    ========================= -->
-
-    <div class="relatorio-card">
-
-      <h2>Relatório nº 0014</h2>
-
-      <ul>
-
-        <li>Data: 03/05/2026</li>
-
-        <li>Local: Setor de Produção</li>
-
-        <li>Tipo: Risco elétrico</li>
-
-      </ul>
+      </div>
 
     </div>
 

@@ -1,16 +1,11 @@
-/* =========================
-   FUNDO
-========================= */
 
+/* FUNDO */
 .background {
   --background: #f8f6f3;
+  background: #f8f6f3;
 }
 
-
-/* =========================
-   BANNER
-========================= */
-
+/* BANNER */
 .banner {
   position: relative;
 }
@@ -23,11 +18,7 @@
   border-bottom-right-radius: 45px;
 }
 
-
-/* =========================
-   LOGO
-========================= */
-
+/* LOGO */
 .logo {
   position: absolute;
   width: 90px;
@@ -35,11 +26,7 @@
   left: 18px;
 }
 
-
-/* =========================
-   BOTÃO VOLTAR
-========================= */
-
+/* BOTÃO VOLTAR */
 .btn-voltar {
   position: absolute;
   top: 75px;
@@ -51,61 +38,7 @@
   z-index: 5;
 }
 
-
-/* =========================
-   LIBRAS
-========================= */
-
-.libras {
-  position: absolute;
-  width: 55px;
-  right: 15px;
-  bottom: 18px;
-  border-radius: 10px;
-  z-index: 5;
-}
-
-
-/* =========================
-   CONTEÚDO
-========================= */
-
-.conteudo {
-  padding: 20px;
-}
-
-.subtitulo {
-  color: #777;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 20px;
-}
-
-
-/* =========================
-   IMAGEM DOS ALERTAS
-========================= */
-
-.imagem-riscos {
-  width: 95%;
-  max-width: 350px;
-  display: block;
-  margin: 0 auto 30px auto;
-  border-radius: 8px;
-}
-
-
-/* ==================================================
-   BOTÃO DO MENU
-================================================== */
-
+/* BOTÃO DO MENU */
 .menu-button {
   display: block !important;
   position: absolute !important;
@@ -118,147 +51,129 @@ h1 {
 
   margin: 0 !important;
 
-  --color: #222222;
+  --color: #222;
   --background: rgba(255, 255, 255, 0.90);
   --border-radius: 8px;
 
   font-size: 28px;
 }
 
-
-/* ==================================================
-   MENU LATERAL
-================================================== */
-
-ion-menu {
-  --width: 260px;
+/* CONTEÚDO */
+.conteudo {
+  padding: 20px;
 }
 
-
-/* FUNDO ESCURO */
-
-ion-menu::part(backdrop) {
-  background: rgba(0, 0, 0, 0.25);
+.subtitulo {
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-
-/* CAIXA DO MENU */
-
-ion-menu::part(container) {
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.10);
+h1 {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
 }
 
-
-/* FUNDO DO MENU */
-
-.menu-content {
-  --background: #ffffff;
-  background: #ffffff;
+.descricao {
+  color: #77716b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-.menu-content ion-list {
-  background: #ffffff;
-  padding: 70px 0 0 0;
-  margin: 0;
-}
-
-
-/* ==================================================
-   ITENS DO MENU
-================================================== */
-
-.menu-content ion-item {
-  --background: #ffffff;
-  --background-hover: #f5f5f5;
-  --background-activated: #f5f5f5;
-  --color: #292929;
-
-  --padding-start: 48px;
-  --padding-end: 15px;
-
-  --inner-padding-start: 0;
-  --inner-padding-end: 0;
-
-  --min-height: 44px;
-
-  height: 44px;
-  margin: 0;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-
-/* TEXTO DO MENU */
-
-.menu-content ion-label {
-  color: #292929;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-}
-
-
-/* ==================================================
-   PERFIL
-================================================== */
-
-.perfil-menu {
-  --min-height: 44px;
-  height: 44px;
-}
-
-.perfil-container {
-  width: 100%;
+/* CARTÕES */
+.card-alerta {
   display: flex;
   align-items: center;
+  margin: 0 0 14px;
+  padding: 12px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
-.perfil-container span {
-  color: #292929;
-  font-size: 14px;
-  font-weight: 600;
+.icone-alerta {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* ==================================================
-   ÍCONES DO MENU
-================================================== */
-
-.menu-content ion-icon {
-  color: #777777;
-  font-size: 23px;
-  margin-right: 16px;
+.icone-alerta ion-icon {
+  font-size: 30px;
+  color: #333;
 }
 
-
-/* ==================================================
-   ESPAÇAMENTO
-================================================== */
-
-.menu-content ion-item + ion-item {
-  margin-top: 3px;
+.incendio {
+  background: #f8e5dc;
 }
 
+.eletrico {
+  background: #f7edcf;
+}
 
-/* ==================================================
-   NOTIFICAÇÕES
-================================================== */
+.quimico {
+  background: #e4ebdf;
+}
 
-.menu-content ion-toggle {
-  --background: #dddddd;
-  --background-checked: #dddddd;
+.card-alerta ion-card-content {
+  padding: 5px 12px;
+}
 
-  --handle-background: #ffffff;
-  --handle-background-checked: #ffffff;
+.card-alerta h2 {
+  color: #252525;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
 
-  --handle-width: 18px;
-  --handle-height: 18px;
+.card-alerta p {
+  color: #77716b;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
 
-  --handle-box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.15);
+.card-alerta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #92764b;
+  font-size: 12px;
+  font-weight: 700;
+}
 
-  width: 30px;
-  height: 18px;
-  margin-right: 17px;
+.card-alerta span ion-icon {
+  font-size: 15px;
+}
+
+/* AVISO */
+.aviso-seguranca {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #eee9df;
+  padding: 13px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.aviso-seguranca ion-icon {
+  color: #92764b;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.aviso-seguranca p {
+  color: #514b43;
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
 }

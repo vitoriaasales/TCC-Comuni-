@@ -1,12 +1,7 @@
+
 /*
  * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
+ * Estilos aplicados globalmente em todo o aplicativo.
  */
 
 /* Core CSS required for Ionic components to work properly */
@@ -18,20 +13,127 @@
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS utils */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
+/* Ionic Dark Mode */
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+
+/* =====================================
+   MENU LATERAL - PADRÃO COMUNI+
+===================================== */
+
+ion-menu {
+  --width: 280px;
+  --background: #ffffff;
+  color-scheme: light;
+}
+
+ion-menu::part(container) {
+  background: #ffffff;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Conteúdo do menu */
+ion-menu ion-content {
+  --background: #ffffff;
+  --padding-top: 0;
+}
+
+/* Lista */
+ion-menu ion-list {
+  background: #ffffff;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Todos os itens */
+ion-menu ion-item {
+  --background: #ffffff;
+  --background-hover: #f7f7f7;
+  --background-activated: #f2f2f2;
+  --color: #222222;
+
+  --min-height: 55px;
+  --padding-start: 18px;
+  --padding-end: 15px;
+  --inner-padding-end: 8px;
+
+  --border-width: 0;
+  --inner-border-width: 0;
+
+  height: 55px;
+  margin: 0 !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Fundo e divisórias */
+ion-menu ion-item::part(native) {
+  background: #ffffff;
+  border-radius: 0;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: none;
+}
+
+/* Perfil */
+ion-menu ion-item.perfil-menu {
+  --background: #ffffff;
+  --color: #222222;
+  --min-height: 55px;
+  height: 55px;
+  margin: 0 !important;
+}
+
+ion-menu ion-item.perfil-menu::part(native) {
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+ion-menu .perfil-menu ion-label {
+  font-weight: 500;
+}
+
+/* Textos */
+ion-menu ion-label {
+  color: #222222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Ícones */
+ion-menu ion-icon {
+  color: #555555;
+  font-size: 21px;
+}
+
+/* Notificações */
+ion-menu ion-toggle {
+  --track-background: #dddddd;
+  --track-background-checked: #333333;
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}
+
+/* Esconder barra de rolagem */
+ion-menu ion-content::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================
+   ALERTAS
+===================================== */
+
+.alerta-detalhes .alert-message {
+  white-space: pre-line;
+  text-align: left;
+  color: #333333;
+  line-height: 1.6;
+}

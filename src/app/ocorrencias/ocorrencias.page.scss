@@ -1,395 +1,234 @@
-/* =========================
-   PÁGINA
-========================= */
 
 .pagina {
   --background: #f7f3ec;
-  background: #f7f3ec;
+  color: #252525;
 }
 
-
-/* =========================
-   BANNER
-========================= */
-
+/* BANNER */
 .banner {
   position: relative;
-  width: 100%;
-  height: 255px;
+  height: 230px;
   overflow: hidden;
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 35px 35px;
 }
 
 .banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
-
-/* =========================
-   BOTÃO VOLTAR
-========================= */
+/* BOTÕES SUPERIORES */
+.menu-button {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  color: #fff;
+  z-index: 10;
+}
 
 .btn-voltar {
   position: absolute;
-  top: 105px;
-  left: 35px;
-  height: 36px;
-  --background: #ffffff;
-  --color: #333333;
-  --border-radius: 9px;
-  --padding-start: 13px;
-  --padding-end: 13px;
-  font-size: 13px;
-  font-weight: 500;
-  margin: 0;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  top: 95px;
+  left: 20px;
+  --color: #fff;
+  font-size: 22px;
 }
 
-
-/* =========================
-   BOTÃO LIBRAS
-========================= */
-
-.libras-btn {
-  position: absolute;
-  right: 12px;
-  bottom: 10px;
-  width: 55px;
-  height: 55px;
-  padding: 0;
-  border: none;
-  border-radius: 9px;
-  background: #0066b3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.libras-btn img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-
-/* =========================
-   CONTEÚDO
-========================= */
-
+/* CONTEÚDO */
 .conteudo {
-  padding: 25px 30px 45px;
+  padding: 25px 22px 45px;
 }
 
-
-/* =========================
-   TÍTULO
-========================= */
-
-.conteudo h1 {
-  margin: 0 0 25px;
+h1 {
   color: #292929;
-  font-size: 25px;
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  color: #68645e;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+/* BOTÃO DE REGISTRO */
+.botao-registrar {
+  --background: #2f2f2f;
+  --background-activated: #444;
+  --color: #fff;
+  --border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+/* CARDS */
+.card-ocorrencia {
+  background: #fff;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.tipo {
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 700;
 }
 
-
-/* =========================
-   CARDS
-========================= */
-
-.card-ocorrencia {
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid #d4d4d4;
-  border-radius: 9px;
-  padding: 17px 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+.acidente {
+  background: #f8e1dc;
+  color: #a83d2c;
 }
 
+.incidente {
+  background: #fff0d2;
+  color: #94620c;
+}
 
-/* =========================
-   TÍTULO DOS CARDS
-========================= */
+.emergencia {
+  background: #f5dede;
+  color: #a32626;
+}
+
+.data {
+  color: #777;
+  font-size: 11px;
+  text-align: right;
+}
 
 .card-ocorrencia h2 {
-  margin: 0 0 9px;
   color: #292929;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.2;
+  margin: 0 0 10px;
 }
 
-
-/* =========================
-   LISTA
-========================= */
-
-.card-ocorrencia ul {
-  margin: 0;
-  padding-left: 21px;
-  color: #222222;
-  font-size: 16px;
-  line-height: 1.55;
-}
-
-.card-ocorrencia li {
-  margin-bottom: 2px;
-}
-
-
-/* =========================
-   AVISO DE CUIDADO
-========================= */
-
-.card-ocorrencia strong {
-  display: block;
-  margin-top: 5px;
-  color: #111111;
-  font-size: 16px;
-  line-height: 1.25;
-  font-weight: 800;
-}
-
-
-/* =========================
-   SCROLL
-========================= */
-
-ion-content {
-  --overflow: auto;
-}
-
-
-/* ==================================================
-   BOTÃO DO MENU
-================================================== */
-
-.menu-button {
-  display: block !important;
-  position: absolute !important;
-  top: 15px !important;
-  right: 10px !important;
-
-  z-index: 9999 !important;
-
-  width: 45px !important;
-  height: 45px !important;
-
-  margin: 0 !important;
-
-  --color: #222222;
-  --background: rgba(255, 255, 255, 0.90);
-  --border-radius: 8px;
-
-  font-size: 28px;
-}
-
-
-/* ==================================================
-   MENU LATERAL
-================================================== */
-
-ion-menu {
-  --width: 260px;
-}
-
-
-/* =========================
-   FUNDO ESCURO
-========================= */
-
-ion-menu::part(backdrop) {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================
-   CAIXA DO MENU
-========================= */
-
-ion-menu::part(container) {
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.10);
-}
-
-
-/* =========================
-   FUNDO DO MENU
-========================= */
-
-.menu-content {
-  --background: #ffffff;
-  background: #ffffff;
-}
-
-.menu-content ion-list {
-  background: #ffffff;
-  padding: 70px 0 0 0;
-  margin: 0;
-}
-
-
-/* =========================
-   ITENS DO MENU
-========================= */
-
-.menu-content ion-item {
-  --background: #ffffff;
-  --background-hover: #f5f5f5;
-  --background-activated: #f5f5f5;
-  --color: #292929;
-
-  --padding-start: 48px;
-  --padding-end: 15px;
-
-  --inner-padding-start: 0;
-  --inner-padding-end: 0;
-
-  --min-height: 44px;
-
-  height: 44px;
-  margin: 0;
-
+.descricao {
+  color: #555;
   font-size: 14px;
-  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 14px;
 }
 
-
-/* =========================
-   TEXTO DO MENU
-========================= */
-
-.menu-content ion-label {
-  color: #292929;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-}
-
-
-/* =========================
-   PERFIL
-========================= */
-
-.perfil-menu {
-  --min-height: 44px;
-  height: 44px;
-}
-
-.perfil-container {
-  width: 100%;
+.informacoes {
   display: flex;
   align-items: center;
+  gap: 7px;
+  color: #777;
+  font-size: 13px;
 }
 
-.perfil-container span {
-  color: #292929;
+.informacoes ion-icon {
+  font-size: 17px;
+}
+
+/* MENSAGENS */
+.mensagem-vazia {
+  text-align: center;
+  padding: 35px 15px;
+  color: #777;
+}
+
+.mensagem-vazia ion-icon {
+  font-size: 38px;
+  color: #b5a88f;
+}
+
+.mensagem-vazia p {
   font-size: 14px;
+}
+
+/* MODAL */
+ion-modal {
+  --height: 90%;
+  --border-radius: 22px;
+  --background: #f7f3ec;
+}
+
+ion-modal ion-toolbar {
+  --background: #f7f3ec;
+  --color: #292929;
+}
+
+.modal-conteudo {
+  --background: #f7f3ec;
+}
+
+.formulario {
+  padding: 22px;
+}
+
+.orientacao {
+  color: #68645e;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.formulario ion-label {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 17px 0 8px;
+}
+
+.formulario ion-input,
+.formulario ion-select,
+.formulario ion-textarea {
+  --background: #fff;
+  --color: #292929;
+  --placeholder-color: #888;
+  --padding-start: 13px;
+  border-radius: 10px;
+  border: 1px solid #e2ded6;
+  margin-bottom: 5px;
+}
+
+.formulario ion-input,
+.formulario ion-select {
+  min-height: 48px;
+}
+
+.formulario ion-textarea {
+  padding: 8px 0;
+}
+
+.botao-salvar {
+  --background: #2f2f2f;
+  --color: #fff;
+  --border-radius: 12px;
+  height: 48px;
+  margin-top: 28px;
   font-weight: 600;
 }
 
-
-/* =========================
-   ÍCONES
-========================= */
-
-.menu-content ion-icon {
-  color: #777777;
-  font-size: 23px;
-  margin-right: 16px;
-}
-
-
-/* =========================
-   ESPAÇAMENTO
-========================= */
-
-.menu-content ion-item + ion-item {
-  margin-top: 3px;
-}
-
-
-/* =========================
-   NOTIFICAÇÕES
-========================= */
-
-.menu-content ion-toggle {
-  --background: #dddddd;
-  --background-checked: #dddddd;
-
-  --handle-background: #ffffff;
-  --handle-background-checked: #ffffff;
-
-  --handle-width: 18px;
-  --handle-height: 18px;
-
-  --handle-box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.15);
-
-  width: 30px;
-  height: 18px;
-  margin-right: 17px;
-}
-
-
-/* ==================================================
-   CELULAR
-================================================== */
-
-@media (max-width: 600px) {
-
-  .banner {
-    height: 255px;
-  }
-
+@media (max-width: 360px) {
   .conteudo {
-    padding: 25px 30px 45px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .conteudo h1 {
-    font-size: 25px;
-    margin-bottom: 25px;
+  .card-topo {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .card-ocorrencia {
-    padding: 17px 15px;
-    margin-bottom: 20px;
+  .data {
+    text-align: left;
   }
-
-  .card-ocorrencia h2 {
-    font-size: 22px;
-  }
-
-  .card-ocorrencia ul {
-    font-size: 16px;
-  }
-
-  .card-ocorrencia strong {
-    font-size: 16px;
-  }
-
-  .btn-voltar {
-    top: 105px;
-    left: 35px;
-  }
-
-  .libras-btn {
-    width: 55px;
-    height: 55px;
-    right: 12px;
-    bottom: 10px;
-  }
-
-  .libras-btn img {
-    width: 40px;
-    height: 40px;
-  }
-
 }

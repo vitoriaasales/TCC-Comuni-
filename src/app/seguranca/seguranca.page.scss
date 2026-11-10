@@ -97,3 +97,69 @@ ion-toggle{
   font-size: 16px;
   text-transform: none;
 }
+
+.item-checklist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.item-checklist span {
+  font-size: 22px;
+  font-weight: 600;
+  color: #292929;
+}
+
+.item-checklist ion-toggle {
+  --track-background: #d8d8d8;
+  --track-background-checked: #d8b987;
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}
+
+.botao-voltar {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.custom-background {
+  --background: #f8f6f3;
+  background: #f8f6f3;
+}
+
+.item-checklist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.item-checklist span {
+  font-size: 22px;
+  font-weight: 600;
+  color: #292929;
+}
+
+.item-checklist ion-toggle {
+  --track-background: #d8d8d8;
+  --track-background-checked: #d8b987;
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}
+
+.botao-voltar {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+
+  --color: #222222;
+  --background: #ffffff;
+  --border-radius: 10px;
+}
