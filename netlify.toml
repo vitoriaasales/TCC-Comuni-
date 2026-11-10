@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "www"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Ionic/Angular é uma SPA: todas as rotas devem servir o index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
