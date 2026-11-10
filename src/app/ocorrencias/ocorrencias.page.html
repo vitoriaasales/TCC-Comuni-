@@ -1,3 +1,4 @@
+
 <ion-content [fullscreen]="true" class="pagina">
 
   <!-- BANNER -->
@@ -94,11 +95,37 @@
         <span>Setor: {{ ocorrencia.setor }}</span>
       </div>
 
+      <!-- BOTÕES DE EDIÇÃO E EXCLUSÃO -->
+      <!-- VISÍVEIS SOMENTE PARA INSTRUTORES -->
+      <div class="acoes-ocorrencia" *ngIf="podeRegistrar">
+
+        <ion-button
+          fill="outline"
+          class="botao-editar"
+          (click)="editarOcorrencia(ocorrencia)">
+
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          Editar
+
+        </ion-button>
+
+        <ion-button
+          fill="outline"
+          class="botao-excluir"
+          (click)="confirmarExclusao(ocorrencia)">
+
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          Excluir
+
+        </ion-button>
+
+      </div>
+
     </div>
 
   </div>
 
-  <!-- MODAL DE REGISTRO -->
+  <!-- MODAL DE CADASTRO E EDIÇÃO -->
   <ion-modal
     [isOpen]="modalAberto"
     (didDismiss)="fecharModal()">
@@ -107,15 +134,21 @@
 
       <ion-header>
         <ion-toolbar>
-          <ion-title>Registrar ocorrência</ion-title>
+
+          <ion-title>
+            {{ editando ? 'Editar ocorrência' : 'Registrar ocorrência' }}
+          </ion-title>
 
           <ion-buttons slot="end">
             <ion-button
               (click)="fecharModal()"
               [disabled]="salvando">
+
               <ion-icon name="close-outline"></ion-icon>
+
             </ion-button>
           </ion-buttons>
+
         </ion-toolbar>
       </ion-header>
 
@@ -124,7 +157,10 @@
         <div class="formulario">
 
           <p class="orientacao">
-            Preencha as informações sobre a ocorrência.
+            {{ editando
+              ? 'Altere as informações da ocorrência.'
+              : 'Preencha as informações sobre a ocorrência.'
+            }}
           </p>
 
           <ion-label>Tipo de ocorrência</ion-label>
@@ -172,6 +208,7 @@
             placeholder="Ex.: Setor 1">
           </ion-input>
 
+          <!-- SALVAR OU ATUALIZAR -->
           <ion-button
             expand="block"
             class="botao-salvar"
@@ -184,7 +221,7 @@
             </ion-spinner>
 
             <span *ngIf="!salvando">
-              Salvar ocorrência
+              {{ editando ? 'Salvar alterações' : 'Salvar ocorrência' }}
             </span>
 
           </ion-button>

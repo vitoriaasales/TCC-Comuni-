@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, AlertController } from '@ionic/angular';
 import { AuthService, Ocorrencia } from '../services/auth';
 
 @Component({
@@ -17,6 +17,9 @@ export class OcorrenciasPage implements OnInit {
   carregando = true;
   modalAberto = false;
   salvando = false;
+  editando = false;
+
+  ocorrenciaEditandoId: number | null = null;
 
   novaOcorrencia = {
     tipo: 'Acidente',
@@ -27,7 +30,8 @@ export class OcorrenciasPage implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private alertController: AlertController
   ) {}
 
   async ngOnInit() {
@@ -60,6 +64,9 @@ export class OcorrenciasPage implements OnInit {
       return;
     }
 
+    this.editando = false;
+    this.ocorrenciaEditandoId = null;
+
     this.novaOcorrencia = {
       tipo: 'Acidente',
       titulo: '',
@@ -70,8 +77,32 @@ export class OcorrenciasPage implements OnInit {
     this.modalAberto = true;
   }
 
+  editarOcorrencia(ocorrencia: Ocorrencia) {
+    if (!this.podeRegistrar) {
+      return;
+    }
+
+    this.editando = true;
+    this.ocorrenciaEditandoId = ocorrencia.id;
+
+    this.novaOcorrencia = {
+      tipo: ocorrencia.tipo,
+      titulo: ocorrencia.titulo,
+      descricao: ocorrencia.descricao,
+      setor: ocorrencia.setor
+    };
+
+    this.modalAberto = true;
+  }
+
   fecharModal() {
+    if (this.salvando) {
+      return;
+    }
+
     this.modalAberto = false;
+    this.editando = false;
+    this.ocorrenciaEditandoId = null;
   }
 
   async salvarOcorrencia() {
@@ -87,24 +118,83 @@ export class OcorrenciasPage implements OnInit {
     this.salvando = true;
 
     try {
-      await this.authService.registrarOcorrencia(
-        this.novaOcorrencia
-      );
+      if (this.editando && this.ocorrenciaEditandoId !== null) {
+
+        await this.authService.editarOcorrencia(
+          this.ocorrenciaEditandoId,
+          this.novaOcorrencia
+        );
+
+        await this.mostrarMensagem(
+          'Ocorrência atualizada com sucesso!'
+        );
+
+      } else {
+
+        await this.authService.registrarOcorrencia(
+          this.novaOcorrencia
+        );
+
+        await this.mostrarMensagem(
+          'Ocorrência registrada com sucesso!'
+        );
+      }
 
       this.modalAberto = false;
+      this.editando = false;
+      this.ocorrenciaEditandoId = null;
+
+      await this.carregarOcorrencias();
+
+    } catch (erro: any) {
+      await this.mostrarMensagem(
+        erro.message || 'Não foi possível salvar.'
+      );
+    } finally {
+      this.salvando = false;
+    }
+  }
+
+  async confirmarExclusao(ocorrencia: Ocorrencia) {
+    if (!this.podeRegistrar) {
+      return;
+    }
+
+    const alerta = await this.alertController.create({
+      header: 'Excluir ocorrência?',
+      message: `Deseja realmente excluir "${ocorrencia.titulo}"? Essa ação não poderá ser desfeita.`,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Excluir',
+          role: 'destructive',
+          handler: () => {
+            this.excluirOcorrencia(ocorrencia.id);
+          }
+        }
+      ]
+    });
+
+    await alerta.present();
+  }
+
+  async excluirOcorrencia(id: number) {
+    try {
+      await this.authService.excluirOcorrencia(id);
 
       await this.mostrarMensagem(
-        'Ocorrência registrada com sucesso!'
+        'Ocorrência excluída com sucesso!'
       );
 
       await this.carregarOcorrencias();
 
     } catch (erro: any) {
       await this.mostrarMensagem(
-        erro.message || 'Não foi possível registrar.'
+        erro.message || 'Não foi possível excluir.'
       );
-    } finally {
-      this.salvando = false;
     }
   }
 
@@ -119,16 +209,13 @@ export class OcorrenciasPage implements OnInit {
     await toast.present();
   }
 
-  
-formatarData(data: string): string {
-  return new Date(data).toLocaleString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-}
-
-
+  formatarData(data: string): string {
+    return new Date(data).toLocaleString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
 }

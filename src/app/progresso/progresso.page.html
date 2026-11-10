@@ -1,0 +1,123 @@
+
+<ion-content [fullscreen]="true" class="pagina">
+
+  <!-- BANNER -->
+  <div class="banner">
+    <img
+      src="assets/trabalho4.jpg"
+      alt="Profissionais trabalhando"
+      class="banner-img">
+
+    <ion-menu-button
+      menu="menu-principal"
+      class="menu-button">
+    </ion-menu-button>
+
+    <ion-button
+      fill="clear"
+      class="btn-voltar"
+      routerLink="/inicio">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="conteudo">
+
+    <h1>Meu progresso</h1>
+
+    <p class="subtitulo">
+      Acompanhe sua evolução nos cuidados com a segurança no trabalho.
+    </p>
+
+    <!-- PROGRESSO GERAL -->
+    <div class="card-progresso">
+
+      <div class="progresso-cabecalho">
+        <div>
+          <span class="legenda">SEU PROGRESSO</span>
+          <h2>{{ percentual }}%</h2>
+          <p>dos equipamentos conferidos</p>
+        </div>
+
+        <div class="icone-progresso">
+          <ion-icon name="trending-up-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="barra-fundo">
+        <div
+          class="barra-preenchida"
+          [style.width.%]="percentual">
+        </div>
+      </div>
+
+      <div class="progresso-rodape">
+        <span>{{ quantidadeConcluida }} de {{ itens.length }} itens</span>
+        <span>{{ percentual }}%</span>
+      </div>
+
+    </div>
+
+    <!-- RESUMO -->
+    <h2 class="titulo-secao">Resumo da segurança</h2>
+
+    <div class="card-resumo">
+
+      <div class="icone-resumo">
+        <ion-icon name="shield-checkmark-outline"></ion-icon>
+      </div>
+
+      <div class="texto-resumo">
+        <strong>{{ quantidadeConcluida }} itens conferidos</strong>
+
+        <p>
+          {{ itens.length - quantidadeConcluida }} itens ainda não conferidos.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- LISTA -->
+    <h2 class="titulo-secao">Seus equipamentos</h2>
+
+    <div class="lista-itens">
+
+      <div class="linha-item" *ngFor="let item of itens">
+
+        <div class="nome-item">
+          <ion-icon
+            [name]="item.concluido ? 'checkmark-circle' : 'ellipse-outline'"
+            [class.concluido]="item.concluido">
+          </ion-icon>
+
+          <span>{{ item.nome }}</span>
+        </div>
+
+        <span
+          class="status"
+          [class.status-concluido]="item.concluido">
+          {{ item.concluido ? 'Conferido' : 'Pendente' }}
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- MENSAGEM -->
+    <div class="mensagem-final" *ngIf="percentual === 100">
+      <ion-icon name="trophy-outline"></ion-icon>
+      <strong>Parabéns!</strong>
+      <p>Você conferiu todos os equipamentos da lista.</p>
+    </div>
+
+    <ion-button
+      expand="block"
+      class="botao-seguranca"
+      routerLink="/seguranca">
+      <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+      Conferir equipamentos
+    </ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,10 +1,17 @@
 
+/* =====================================
+   PÁGINA
+===================================== */
+
 .pagina {
   --background: #f7f3ec;
-  color: #252525;
+  color: #292929;
 }
 
-/* BANNER */
+/* =====================================
+   BANNER
+===================================== */
+
 .banner {
   position: relative;
   height: 230px;
@@ -19,7 +26,6 @@
   display: block;
 }
 
-/* BOTÕES SUPERIORES */
 .menu-button {
   position: absolute;
   top: 15px;
@@ -36,43 +42,57 @@
   font-size: 22px;
 }
 
-/* CONTEÚDO */
+/* =====================================
+   CONTEÚDO
+===================================== */
+
 .conteudo {
-  padding: 25px 22px 45px;
+  padding: 26px 22px 45px;
 }
 
 h1 {
   color: #292929;
-  font-size: 27px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 750;
+  margin: 0 0 9px;
 }
 
 .subtitulo {
-  color: #68645e;
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 22px;
+  color: #777168;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
 }
 
-/* BOTÃO DE REGISTRO */
+/* =====================================
+   BOTÃO REGISTRAR
+===================================== */
+
 .botao-registrar {
-  --background: #2f2f2f;
-  --background-activated: #444;
+  --background: #302f2c;
+  --background-activated: #494640;
   --color: #fff;
-  --border-radius: 12px;
-  height: 48px;
+  --border-radius: 13px;
+  height: 49px;
+  font-size: 14px;
   font-weight: 600;
-  margin: 0 0 22px;
+  margin: 0 0 24px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
 }
 
-/* CARDS */
+/* =====================================
+   CARDS DE OCORRÊNCIA
+===================================== */
+
 .card-ocorrencia {
   background: #fff;
-  border-radius: 15px;
-  padding: 18px;
-  margin-bottom: 15px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee9df;
+  border-radius: 19px;
+  padding: 19px;
+  margin-bottom: 17px;
+  box-shadow: 0 5px 17px rgba(69, 57, 39, 0.06);
+  transition: transform 0.2s ease;
 }
 
 .card-topo {
@@ -80,89 +100,168 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-bottom: 13px;
+  margin-bottom: 16px;
 }
 
+/* TIPOS */
+
 .tipo {
-  padding: 6px 11px;
+  padding: 7px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .acidente {
-  background: #f8e1dc;
-  color: #a83d2c;
+  background: #f9e5e0;
+  color: #a74335;
 }
 
 .incidente {
-  background: #fff0d2;
-  color: #94620c;
+  background: #fff2d9;
+  color: #94651b;
 }
 
 .emergencia {
-  background: #f5dede;
-  color: #a32626;
+  background: #f6dddd;
+  color: #a32929;
 }
 
 .data {
-  color: #777;
+  color: #999187;
   font-size: 11px;
   text-align: right;
 }
 
+/* INFORMAÇÕES */
+
 .card-ocorrencia h2 {
-  color: #292929;
+  color: #302f2c;
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 10px;
+  line-height: 1.35;
 }
 
 .descricao {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 14px;
+  color: #69645d;
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0 0 17px;
 }
 
 .informacoes {
   display: flex;
   align-items: center;
-  gap: 7px;
-  color: #777;
-  font-size: 13px;
+  gap: 8px;
+  color: #81796d;
+  font-size: 12px;
+  padding: 11px 12px;
+  background: #faf8f4;
+  border-radius: 10px;
 }
 
 .informacoes ion-icon {
   font-size: 17px;
+  color: #a28b63;
 }
 
-/* MENSAGENS */
+/* =====================================
+   BOTÕES EDITAR E EXCLUIR
+===================================== */
+
+.acoes-ocorrencia {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.acoes-ocorrencia ion-button {
+  flex: 1;
+  height: 42px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0;
+  --border-radius: 11px;
+  --box-shadow: none;
+  text-transform: none;
+}
+
+.botao-editar {
+  --background: #f3eee3;
+  --background-hover: #eae1d0;
+  --background-activated: #eae1d0;
+  --color: #6d5733;
+  --border-width: 0;
+}
+
+.botao-excluir {
+  --background: #fbefed;
+  --background-hover: #f4dfdc;
+  --background-activated: #f4dfdc;
+  --color: #a3443b;
+  --border-width: 0;
+}
+
+.acoes-ocorrencia ion-icon {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+/* =====================================
+   CARREGAMENTO E LISTA VAZIA
+===================================== */
+
 .mensagem-vazia {
   text-align: center;
-  padding: 35px 15px;
-  color: #777;
+  padding: 40px 18px;
+  color: #888176;
 }
 
 .mensagem-vazia ion-icon {
-  font-size: 38px;
+  font-size: 42px;
   color: #b5a88f;
 }
 
-.mensagem-vazia p {
-  font-size: 14px;
+.mensagem-vazia ion-spinner {
+  color: #a58c61;
 }
 
-/* MODAL */
+.mensagem-vazia p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* =====================================
+   MODAL
+===================================== */
+
 ion-modal {
   --height: 90%;
-  --border-radius: 22px;
+  --border-radius: 24px;
   --background: #f7f3ec;
+}
+
+ion-modal ion-header {
+  box-shadow: none;
 }
 
 ion-modal ion-toolbar {
   --background: #f7f3ec;
   --color: #292929;
+  --border-color: #e8e1d6;
+}
+
+ion-modal ion-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+ion-modal ion-toolbar ion-button {
+  --color: #393630;
 }
 
 .modal-conteudo {
@@ -170,21 +269,22 @@ ion-modal ion-toolbar {
 }
 
 .formulario {
-  padding: 22px;
+  padding: 23px 22px 35px;
 }
 
 .orientacao {
-  color: #68645e;
-  font-size: 14px;
-  margin-bottom: 22px;
+  color: #777168;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 23px;
 }
 
 .formulario ion-label {
   display: block;
-  color: #333;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 17px 0 8px;
+  color: #393630;
+  font-size: 13px;
+  font-weight: 650;
+  margin: 19px 0 9px;
 }
 
 .formulario ion-input,
@@ -192,16 +292,18 @@ ion-modal ion-toolbar {
 .formulario ion-textarea {
   --background: #fff;
   --color: #292929;
-  --placeholder-color: #888;
-  --padding-start: 13px;
-  border-radius: 10px;
-  border: 1px solid #e2ded6;
+  --placeholder-color: #aaa39a;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  border-radius: 12px;
+  border: 1px solid #e7e0d5;
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .formulario ion-input,
 .formulario ion-select {
-  min-height: 48px;
+  min-height: 49px;
 }
 
 .formulario ion-textarea {
@@ -209,13 +311,21 @@ ion-modal ion-toolbar {
 }
 
 .botao-salvar {
-  --background: #2f2f2f;
+  --background: #302f2c;
+  --background-activated: #494640;
   --color: #fff;
-  --border-radius: 12px;
-  height: 48px;
-  margin-top: 28px;
-  font-weight: 600;
+  --border-radius: 13px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+  height: 49px;
+  margin: 28px 0 0;
+  font-size: 14px;
+  font-weight: 650;
+  text-transform: none;
 }
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
 
 @media (max-width: 360px) {
   .conteudo {
@@ -230,5 +340,13 @@ ion-modal ion-toolbar {
 
   .data {
     text-align: left;
+  }
+
+  .acoes-ocorrencia {
+    gap: 7px;
+  }
+
+  .acoes-ocorrencia ion-button {
+    font-size: 11px;
   }
 }

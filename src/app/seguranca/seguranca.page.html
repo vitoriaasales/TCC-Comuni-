@@ -1,23 +1,17 @@
 
-<!-- CABEÇALHO -->
 <ion-header [translucent]="true">
 </ion-header>
 
-<!-- CONTEÚDO PRINCIPAL -->
-<ion-content
-  [fullscreen]="true"
-  class="custom-background">
+<ion-content [fullscreen]="true" class="custom-background">
 
   <!-- BANNER -->
   <div class="banner">
 
-    <!-- BOTÃO DO MENU -->
     <ion-menu-button
       menu="menu-principal"
       class="menu-btn">
     </ion-menu-button>
 
-    <!-- IMAGEM -->
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Ot3NysZBi0ZrZh6CvTztwo1yrEGWbkt-NTm85rwa07y5hhKzz0zx6-g&s=10"
       class="banner-img"
@@ -25,54 +19,44 @@
 
   </div>
 
-  <!-- CONTEÚDO -->
   <div class="container">
 
-    <h1>Checklist de Segurança</h1>
+    <h1>Segurança</h1>
 
-    <!-- CAPACETE -->
-    <div class="item-checklist">
-      <span>Capacete</span>
-      <ion-toggle></ion-toggle>
+    <p class="subtitulo">
+      Confira os equipamentos de proteção antes de iniciar suas atividades.
+    </p>
+
+    <div class="resumo-progresso">
+      <div class="resumo-topo">
+        <span>Itens conferidos</span>
+        <strong>{{ quantidadeConcluida }}/{{ itens.length }}</strong>
+      </div>
+
+      <div class="barra-fundo">
+        <div
+          class="barra-preenchida"
+          [style.width.%]="percentual">
+        </div>
+      </div>
+
+      <p>{{ percentual }}% concluído</p>
     </div>
 
-    <!-- LUVAS -->
-    <div class="item-checklist">
-      <span>Luvas</span>
-      <ion-toggle></ion-toggle>
+    <!-- EQUIPAMENTOS -->
+    <div
+      class="item-checklist"
+      *ngFor="let item of itens">
+
+      <span>{{ item.nome }}</span>
+
+      <ion-toggle
+        [checked]="item.concluido"
+        (ionChange)="atualizarItem(item, $event.detail.checked)">
+      </ion-toggle>
+
     </div>
 
-    <!-- ÓCULOS -->
-    <div class="item-checklist">
-      <span>Óculos</span>
-      <ion-toggle></ion-toggle>
-    </div>
-
-    <!-- COLETE -->
-    <div class="item-checklist">
-      <span>Colete</span>
-      <ion-toggle></ion-toggle>
-    </div>
-
-    <!-- PROTETOR FACIAL -->
-    <div class="item-checklist">
-      <span>Protetor Facial</span>
-      <ion-toggle></ion-toggle>
-    </div>
-
-    <!-- MÁSCARA -->
-    <div class="item-checklist">
-      <span>Máscara</span>
-      <ion-toggle></ion-toggle>
-    </div>
-
-    <!-- BOTAS -->
-    <div class="item-checklist">
-      <span>Botas</span>
-      <ion-toggle></ion-toggle>
-    </div>
-
-    <!-- VOLTAR -->
     <div class="botao-voltar">
       <ion-button fill="clear" routerLink="/inicio">
         Voltar

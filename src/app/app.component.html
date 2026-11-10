@@ -1,7 +1,6 @@
 
 <ion-app>
 
-  <!-- MENU LATERAL ÚNICO -->
   <ion-menu
     menuId="menu-principal"
     contentId="main-content"
@@ -12,53 +11,74 @@
 
         <!-- PERFIL -->
         <ion-item button routerLink="/sobremim">
+          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
           <ion-label>Seu perfil</ion-label>
         </ion-item>
 
         <!-- INÍCIO -->
         <ion-item button routerLink="/inicio">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
           <ion-label>Início</ion-label>
-          <ion-icon slot="end" name="home-outline"></ion-icon>
         </ion-item>
 
-        <!-- CHECKLIST -->
+        <!-- SEGURANÇA -->
         <ion-item button routerLink="/seguranca">
-          <ion-label>Checklist de segurança</ion-label>
+          <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+          <ion-label>Segurança</ion-label>
+        </ion-item>
+
+        <!-- MEU PROGRESSO -->
+        <ion-item button routerLink="/progresso">
+          <ion-icon name="trending-up-outline" slot="start"></ion-icon>
+          <ion-label>Meu progresso</ion-label>
         </ion-item>
 
         <!-- SINAIS DE ALERTA -->
         <ion-item button routerLink="/alerta">
-          <ion-label>Sinais de Alerta</ion-label>
+          <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+          <ion-label>Sinais de alerta</ion-label>
         </ion-item>
 
         <!-- O QUE FAZER -->
         <ion-item button routerLink="/risco">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
           <ion-label>O que fazer?</ion-label>
         </ion-item>
 
         <!-- OCORRÊNCIAS -->
         <ion-item button routerLink="/ocorrencias">
+          <ion-icon name="document-text-outline" slot="start"></ion-icon>
           <ion-label>Ocorrências</ion-label>
         </ion-item>
 
         <!-- RELATÓRIOS -->
         <ion-item button routerLink="/relatorios">
+          <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
           <ion-label>Relatórios</ion-label>
         </ion-item>
 
         <!-- CHAT -->
         <ion-item button routerLink="/chat">
+          <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
           <ion-label>Chat</ion-label>
         </ion-item>
 
         <!-- NOTIFICAÇÕES -->
         <ion-item>
+          <ion-icon name="notifications-outline" slot="start"></ion-icon>
           <ion-label>Notificações</ion-label>
           <ion-toggle slot="end"></ion-toggle>
         </ion-item>
 
+       <!-- REDEFINIR SENHA -->
+<ion-item button routerLink="/redefinir">
+  <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+  <ion-label>Redefinir senha</ion-label>
+</ion-item>
+
         <!-- SAIR -->
         <ion-item button routerLink="/home">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
           <ion-label>Sair</ion-label>
         </ion-item>
 
@@ -67,7 +87,6 @@
 
   </ion-menu>
 
-  <!-- CONTEÚDO DAS PÁGINAS -->
   <ion-router-outlet id="main-content"></ion-router-outlet>
 
 </ion-app>

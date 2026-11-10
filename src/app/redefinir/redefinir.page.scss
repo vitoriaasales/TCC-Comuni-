@@ -1,202 +1,126 @@
+
 ion-content {
-  --background: rgb(255, 243, 226);
+  --background: #f7f3ec;
 }
 
 .container {
-
-  padding: 40px 25px 50px;
-
-  position: relative;
-
-  background-color: rgb(255, 243, 226);
-
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 35px 25px;
+  color: #292929;
   min-height: 100%;
-
-  box-sizing: border-box;
-
+  display: flex;
+  flex-direction: column;
 }
-
-h1 {
-
-  font-size: 46px;
-
-  font-weight: 700;
-
-  color: #252525;
-
-  margin-top: 25px;
-
-  margin-bottom: 12px;
-
-  text-align: center;
-
-  line-height: 1.15;
-
-}
-
-p {
-
-  color: #7a7a7a;
-
-  margin-bottom: 35px;
-
-  text-align: center;
-
-}
-
-.dados {
-
-  margin-top: 12px;
-
-  margin-bottom: 20px;
-
-}
-
-.dados label {
-
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: #252525;
-
-  font-size: 14px;
-
-}
-
-ion-input {
-
-  --background: #1f1f1f;
-
-  --color: #ffffff;
-
-  --placeholder-color: #b5b5b5;
-
-  --placeholder-opacity: 1;
-
-  --padding-start: 12px;
-
-  --padding-end: 12px;
-
-  border-radius: 6px;
-
-  min-height: 50px;
-
-  margin-bottom: 12px;
-
-}
-
-ion-button {
-
-  margin-top: 18px;
-
-  --background: #2f2f2f;
-
-  --color: #ffffff;
-
-  --border-radius: 8px;
-
-  height: 48px;
-
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.20);
-
-}
-
-a {
-
-  display: block;
-
-  text-align: center;
-
-  color: #555;
-
-  margin-top: 18px;
-
-  text-decoration: underline;
-
-}
-
-
-/* =========================
-   LOGO COMUNI+
-========================= */
 
 .logo {
-
   text-align: center;
-
-  margin-bottom: 25px;
-
-}
-
-.logo-icones {
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  height: 30px;
-
-  margin-bottom: 2px;
-
-}
-
-.icone-ouvido {
-
-  width: 28px;
-
-  height: 28px;
-
-  border-radius: 50%;
-
-  background: #eeeeea;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 17px;
-
-  color: #252525;
-
-  z-index: 2;
-
-}
-
-.icone-fala {
-
-  background: #252525;
-
-  color: white;
-
-  border-radius: 12px;
-
-  font-size: 11px;
-
-  padding: 5px 7px;
-
-  margin-left: -4px;
-
+  margin: 35px 0 40px;
 }
 
 .logo h2 {
-
-  font-size: 15px;
-
+  font-size: 31px;
   font-weight: 700;
-
-  color: #252525;
-
-  margin: 0;
-
+  color: #292929;
+  margin: 8px 0;
 }
 
 .logo h2 span {
+  color: #c5a76d;
+}
 
-  color: #d8b987;
+.logo-icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #292929;
+}
 
+h1 {
+  font-size: 29px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #292929;
+}
+
+.descricao {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+label {
+  color: #292929;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+ion-input {
+  --background: #dedede;
+  --color: #292929;
+  --placeholder-color: #777;
+  --padding-start: 15px;
+  --padding-end: 15px;
+
+  border-radius: 12px;
+  min-height: 50px;
+  margin-top: 5px;
+}
+
+ion-button {
+  --background: #2d2d2d;
+  --background-hover: #444;
+  --border-radius: 12px;
+  --color: #fff;
+
+  height: 50px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.mensagem-erro {
+  color: #c0392b;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.email-conta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: #eae1d1;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  overflow-wrap: anywhere;
+}
+
+.email-conta span {
+  font-size: 12px;
+  color: #766b5c;
+}
+
+.email-conta strong {
+  font-size: 15px;
+  color: #292929;
+}
+
+a {
+  color: #806743;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
 }

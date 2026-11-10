@@ -1,52 +1,91 @@
-```html
-<ion-content [fullscreen]="true">
 
+<ion-content [fullscreen]="true">
   <div class="container">
 
-    <!-- LOGO -->
     <div class="logo">
-
-      <div class="logo-icones">
-        <span class="icone-ouvido">◉</span>
-        <span class="icone-fala">•••</span>
-      </div>
-
       <h2>Comuni<span>+</span></h2>
-
     </div>
 
-    <h1>Redefinir Senha</h1>
+    <h1>Redefinir senha</h1>
 
-    <div class="dados">
+    <ng-container *ngIf="!sessaoRecuperacao">
 
-      <label>Email</label>
-      <ion-input
-        type="email"
-        placeholder="example1@gmail.com"
-        fill="solid">
-      </ion-input>
+      <p class="descricao">
+        Digite o e-mail da sua conta para iniciar a redefinição da senha.
+      </p>
 
-      <label>Nova Senha</label>
-      <ion-input
-        type="password"
-        placeholder="Nova senha"
-        fill="solid">
-      </ion-input>
+      <form [formGroup]="emailForm" (ngSubmit)="solicitarRecuperacao()">
 
-      <label>Redefinir Senha</label>
-      <ion-input
-        type="password"
-        placeholder="Redefinir senha"
-        fill="solid">
-      </ion-input>
+        <div class="dados">
+          <label>E-mail</label>
 
-      <ion-button expand="block" href="/login">
-        ENVIAR
-      </ion-button>
+          <ion-input
+            type="email"
+            formControlName="email"
+            placeholder="Digite seu e-mail"
+            fill="solid">
+          </ion-input>
 
-    </div>
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="carregando">
+            {{ carregando ? 'ENVIANDO...' : 'CONTINUAR' }}
+          </ion-button>
+        </div>
+
+      </form>
+    </ng-container>
+
+    <ng-container *ngIf="sessaoRecuperacao">
+
+      <p class="descricao">
+        Confirme o e-mail da conta e cadastre sua nova senha.
+      </p>
+
+      <form [formGroup]="senhaForm" (ngSubmit)="redefinirSenha()">
+
+        <div class="dados">
+
+          <label>E-mail da conta</label>
+
+          <ion-input
+            type="email"
+            formControlName="email"
+            placeholder="Digite seu e-mail"
+            fill="solid">
+          </ion-input>
+
+          <label>Nova senha</label>
+
+          <ion-input
+            type="password"
+            formControlName="novaSenha"
+            placeholder="Digite sua nova senha"
+            fill="solid">
+          </ion-input>
+
+          <label>Confirmar nova senha</label>
+
+          <ion-input
+            type="password"
+            formControlName="confirmarSenha"
+            placeholder="Digite novamente sua nova senha"
+            fill="solid">
+          </ion-input>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="carregando">
+            {{ carregando ? 'SALVANDO...' : 'SALVAR NOVA SENHA' }}
+          </ion-button>
+
+        </div>
+      </form>
+    </ng-container>
+
+    <a routerLink="/login">Voltar para o login</a>
 
   </div>
-
 </ion-content>
-```

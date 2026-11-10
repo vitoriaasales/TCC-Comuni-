@@ -1,0 +1,98 @@
+
+/* =====================================
+   MENU LATERAL COMUNI+
+===================================== */
+
+ion-menu {
+  --width: 290px;
+  --background: #f7f3ec;
+}
+
+.menu-content {
+  --background: #f7f3ec;
+  --padding-top: 38px;
+}
+
+/* LISTA */
+
+.menu-content ion-list {
+  background: transparent;
+  padding: 12px 15px 25px;
+}
+
+/* ITENS */
+
+.menu-content ion-item {
+  --background: transparent;
+  --background-hover: #eee8dc;
+  --background-activated: #eee8dc;
+  --color: #39352f;
+  --border-radius: 12px;
+  --padding-start: 15px;
+  --inner-padding-end: 12px;
+  --min-height: 49px;
+
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ÍCONES */
+
+.menu-content ion-item ion-icon {
+  color: #9a8058;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* PERFIL EM DESTAQUE */
+
+.menu-content ion-item:first-child {
+  --background: #eae1d1;
+  --color: #443a2d;
+
+  margin-bottom: 20px;
+  --min-height: 58px;
+  font-weight: 700;
+}
+
+.menu-content ion-item:first-child ion-icon {
+  color: #806743;
+  font-size: 23px;
+}
+
+/* SEPARAÇÃO VISUAL */
+
+.menu-content ion-item:nth-child(2) {
+  margin-top: 5px;
+}
+
+/* NOTIFICAÇÕES */
+
+.menu-content ion-toggle {
+  --track-background: #d8d0c2;
+  --track-background-checked: #a58b5e;
+  --handle-background: #fff;
+  --handle-background-checked: #fff;
+}
+
+/* SAIR */
+
+.menu-content ion-item:last-child {
+  margin-top: 18px;
+  border-top: 1px solid #e4ddd1;
+  --border-radius: 0;
+  --color: #a34a40;
+  padding-top: 10px;
+}
+
+.menu-content ion-item:last-child ion-icon {
+  color: #a34a40;
+}
+
+/* TEXTO */
+
+.menu-content ion-label {
+  color: inherit;
+  font-size: 14px;
+}

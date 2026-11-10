@@ -99,6 +99,10 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./splash/splash.module').then(m => m.SplashPageModule)
+  },
+  {
+    path: 'progresso',
+    loadChildren: () => import('./progresso/progresso.module').then( m => m.ProgressoPageModule)
   }
 
 ];

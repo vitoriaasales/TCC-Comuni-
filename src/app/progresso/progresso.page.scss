@@ -1,0 +1,279 @@
+
+/* PÁGINA */
+
+.pagina {
+  --background: #f7f3ec;
+  color: #292929;
+}
+
+/* BANNER */
+
+.banner {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 0 0 35px 35px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-button {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  color: #fff;
+  z-index: 10;
+}
+
+.btn-voltar {
+  position: absolute;
+  top: 95px;
+  left: 20px;
+  --color: #fff;
+  font-size: 22px;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+  padding: 26px 22px 45px;
+}
+
+h1 {
+  color: #292929;
+  font-size: 28px;
+  font-weight: 750;
+  margin: 0 0 9px;
+}
+
+.subtitulo {
+  color: #777168;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+/* CARD PRINCIPAL */
+
+.card-progresso {
+  background: #fff;
+  border: 1px solid #eee8de;
+  border-radius: 19px;
+  padding: 21px;
+  box-shadow: 0 5px 17px rgba(69, 57, 39, 0.06);
+}
+
+.progresso-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.legenda {
+  color: #9a8c75;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.progresso-cabecalho h2 {
+  color: #302f2c;
+  font-size: 36px;
+  font-weight: 750;
+  margin: 7px 0 2px;
+}
+
+.progresso-cabecalho p {
+  color: #81796d;
+  font-size: 12px;
+  margin: 0;
+}
+
+.icone-progresso {
+  width: 53px;
+  height: 53px;
+  border-radius: 16px;
+  background: #f3eee3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-progresso ion-icon {
+  color: #8b744d;
+  font-size: 27px;
+}
+
+/* BARRA */
+
+.barra-fundo {
+  width: 100%;
+  height: 10px;
+  background: #eeeae2;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: #a58b5e;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.progresso-rodape {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  color: #898176;
+  font-size: 11px;
+}
+
+/* SEÇÕES */
+
+.titulo-secao {
+  color: #302f2c;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 27px 0 14px;
+}
+
+/* RESUMO */
+
+.card-resumo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #fff;
+  border: 1px solid #eee8de;
+  border-radius: 15px;
+  padding: 17px;
+}
+
+.icone-resumo {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: #f3eee3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-resumo ion-icon {
+  color: #8b744d;
+  font-size: 23px;
+}
+
+.texto-resumo strong {
+  color: #393630;
+  font-size: 13px;
+}
+
+.texto-resumo p {
+  color: #898176;
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+
+/* LISTA DE EQUIPAMENTOS */
+
+.lista-itens {
+  background: #fff;
+  border: 1px solid #eee8de;
+  border-radius: 15px;
+  padding: 4px 16px;
+}
+
+.linha-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 53px;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.linha-item:last-child {
+  border-bottom: none;
+}
+
+.nome-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #49453e;
+  font-size: 13px;
+}
+
+.nome-item ion-icon {
+  color: #b8afa1;
+  font-size: 19px;
+}
+
+.nome-item ion-icon.concluido {
+  color: #7d956d;
+}
+
+.status {
+  color: #a18d6c;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.status-concluido {
+  color: #718b62;
+}
+
+/* CONCLUSÃO */
+
+.mensagem-final {
+  text-align: center;
+  background: #f0f3e9;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  color: #536d46;
+}
+
+.mensagem-final ion-icon {
+  display: block;
+  font-size: 30px;
+  margin: 0 auto 8px;
+}
+
+.mensagem-final strong {
+  font-size: 15px;
+}
+
+.mensagem-final p {
+  font-size: 12px;
+  margin: 7px 0 0;
+}
+
+/* BOTÃO */
+
+.botao-seguranca {
+  --background: #302f2c;
+  --background-activated: #494640;
+  --color: #fff;
+  --border-radius: 13px;
+  height: 49px;
+  margin-top: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+@media (max-width: 360px) {
+  .conteudo {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

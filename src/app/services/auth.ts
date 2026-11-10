@@ -24,6 +24,113 @@ export interface Ocorrencia {
 })
 export class AuthService {
 
+  
+async solicitarRecuperacaoSenha(email: string): Promise<void> {
+  const { error } = await this.supabase.auth.resetPasswordForEmail(
+    email,
+    {
+      redirectTo: `${window.location.origin}/redefinir`
+    }
+  );
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}
+
+async verificarSessaoRecuperacao(): Promise<boolean> {
+  const { data, error } = await this.supabase.auth.getSession();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return !!data.session;
+}
+
+async obterEmailUsuario(): Promise<string> {
+  const { data, error } = await this.supabase.auth.getUser();
+
+  if (error || !data.user?.email) {
+    throw new Error('Não foi possível identificar a conta autorizada.');
+  }
+
+  return data.user.email;
+}
+
+async atualizarSenhaRecuperacao(novaSenha: string): Promise<void> {
+  const { data } = await this.supabase.auth.getSession();
+
+  if (!data.session) {
+    throw new Error('A autorização expirou. Solicite um novo link.');
+  }
+
+  const { error } = await this.supabase.auth.updateUser({
+    password: novaSenha
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  await this.supabase.auth.signOut();
+}
+
+  // EDITAR OCORRÊNCIA - SOMENTE INSTRUTOR
+async editarOcorrencia(
+  id: number,
+  dados: {
+    tipo: string;
+    titulo: string;
+    descricao: string;
+    setor: string;
+  }
+): Promise<void> {
+  const perfil = await this.buscarPerfil();
+
+  if (perfil?.tipo_usuario !== 'instrutor') {
+    throw new Error('Somente instrutores podem editar ocorrências.');
+  }
+
+  const { error } = await this.supabase
+    .from('ocorrencias')
+    .update({
+      tipo: dados.tipo,
+      titulo: dados.titulo,
+      descricao: dados.descricao,
+      setor: dados.setor
+    })
+    .eq('id', id);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}
+
+// EXCLUIR OCORRÊNCIA - SOMENTE INSTRUTOR
+async excluirOcorrencia(id: number): Promise<void> {
+  const perfil = await this.buscarPerfil();
+
+  if (perfil?.tipo_usuario !== 'instrutor') {
+    throw new Error('Somente instrutores podem excluir ocorrências.');
+  }
+
+  const { data, error } = await this.supabase
+    .from('ocorrencias')
+    .delete()
+    .eq('id', id)
+    .select('id');
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  if (!data || data.length !== 1) {
+    throw new Error(
+      'Não foi possível excluir a ocorrência. Verifique as permissões.'
+    );
+  }
+}
   private supabase: SupabaseClient;
 
   constructor() {
@@ -276,7 +383,6 @@ export class AuthService {
 
   // LISTAR OCORRÊNCIAS DA EMPRESA
   async listarOcorrencias(): Promise<Ocorrencia[]> {
-
     const perfil = await this.buscarPerfil();
 
     if (!perfil?.empresa) {
@@ -298,7 +404,6 @@ export class AuthService {
 
   // IA
   async enviarMensagemIA(mensagem: string): Promise<string> {
-
     const { data, error } = await this.supabase.functions.invoke(
       'chat-ia',
       {
@@ -316,6 +421,48 @@ export class AuthService {
     }
 
     return data.resposta;
+  }
+
+  // SOLICITAR CÓDIGO DE RECUPERAÇÃO
+  async solicitarCodigoRecuperacao(email: string): Promise<void> {
+    const { error } = await this.supabase.auth.resetPasswordForEmail(
+      email.trim().toLowerCase()
+    );
+
+    if (error) {
+      throw new Error(error.message);
+    }
+  }
+
+  // CONFIRMAR CÓDIGO E ATUALIZAR SENHA
+  async confirmarCodigoRecuperacao(
+    email: string,
+    codigo: string,
+    novaSenha: string
+  ): Promise<void> {
+
+    const { data, error } = await this.supabase.auth.verifyOtp({
+      email: email.trim().toLowerCase(),
+      token: codigo.trim(),
+      type: 'recovery'
+    });
+
+    if (error || !data.session) {
+      throw new Error(
+        'Código inválido ou expirado. Solicite outro código.'
+      );
+    }
+
+    const { error: erroSenha } = await this.supabase.auth.updateUser({
+      password: novaSenha
+    });
+
+    if (erroSenha) {
+      throw new Error(erroSenha.message);
+    }
+
+    // ENCERRAR SESSÃO APÓS A ALTERAÇÃO
+    await this.supabase.auth.signOut();
   }
 
 }
